@@ -25,17 +25,17 @@ body {
 
 #avatar {
   z-index: 2;
+  height: 100px;
   position: absolute;
   margin-top: 450px;
   margin-left: 800px;
 }
 
-#spaceship {
-  width: 100px;
-}
+
 
 #shape1 {
   z-index: 2;
+  height: 100px;
   position: absolute;
   margin-top: 300px;
   margin-left: 650px;
@@ -43,6 +43,7 @@ body {
 
 #shape2 {
   z-index: 2;
+  height: 100px;
   position: absolute;
   margin-top: 250px;
   margin-left: 800px;
@@ -52,12 +53,14 @@ body {
 #shape3 {
   z-index: 2;
   position: absolute;
+  height: 100px;
   margin-top: 300px;
   margin-left: 950px;
 }
 
 #spaceship {
   z-index: 2;
+  height: 200px;
   position: absolute;
   margin-left: 400px;
   margin-top: 300px;
