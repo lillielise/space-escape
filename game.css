@@ -1,0 +1,71 @@
+/* Header */
+
+body {
+  background-image: url('img/milky-way-2675322_1920.jpg');
+  height: 100%;
+}
+
+#game-container {
+ height: 650px;
+ color: white;
+}
+
+
+
+/* Game Time */
+
+#background {
+  border: 30px black solid;
+  position: absolute;
+  width: 800px;
+  margin-top: 100px;
+  margin-left: 350px;
+  z-index: 1;
+}
+
+#avatar {
+  z-index: 2;
+  position: absolute;
+  margin-top: 450px;
+  margin-left: 800px;
+}
+
+#spaceship {
+  width: 100px;
+}
+
+#shape1 {
+  z-index: 2;
+  position: absolute;
+  margin-top: 300px;
+  margin-left: 650px;
+}
+
+#shape2 {
+  z-index: 2;
+  position: absolute;
+  margin-top: 250px;
+  margin-left: 800px;
+  
+}
+
+#shape3 {
+  z-index: 2;
+  position: absolute;
+  margin-top: 300px;
+  margin-left: 950px;
+}
+
+#spaceship {
+  z-index: 2;
+  position: absolute;
+  margin-left: 400px;
+  margin-top: 300px;
+}
+
+#footer{
+  background-color: rgb(222, 211, 211);
+  /* width: 100%; */
+  padding: 25px;
+  border: 25px solid black;
+}
