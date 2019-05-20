@@ -1,0 +1,51 @@
+header{
+  height: 120px;
+  background-color: grey;
+}
+
+
+nav img {
+  float: left; 
+  margin-top: 10px;
+  margin-right: 30px;
+  padding-bottom: 15px;
+}
+
+li {
+  display: inline-block;
+  margin-left: 150px;
+  margin-top: 50px;
+  font-size: 1em;
+}
+h1{
+  text-align: center;
+  font-size: 4em;
+  padding:  0px 280px 25px 350px;
+  /* display: inline; */
+}
+
+main p{
+  text-align: center;
+  margin: 0px 200px 0px 200px;
+}
+
+#hero{
+  margin: 100px 300px 30px 300px;
+}
+
+#headshots li{
+  display: inline-block;
+  margin: 0px 30px 0px 20px;
+
+  
+}
+/* #blurbs{
+  display: inline;
+  margin: 0px 200px 0px 20px;
+} */
+
+footer{
+  margin: 0px 200px 0px 200px;
+  text-align: center;
+  padding: 10px 200px 10px 200px;
+}
