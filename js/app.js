@@ -6,25 +6,33 @@
 // Global Varriables //
 
 // DOM
-var gameStartButton = document.getElementById('');
+
 
 // DOM - Shapes
-var leftStone = document.getElementById('');
-var middleStone = document.getElementById('');
-var rightStone = document.getElementById('');
-var spaceshipStone = document.getElementById('');
+
+var shapeClick = document.getElementById('shape-click');
+
+var shape1 = document.getElementById('shape1');
+var shape2 = document.getElementById('shape2');
+var shape3 = document.getElementById('shape3');
+
+var riddle1 = document.getElementById('riddle1');
+var riddle2 = document.getElementById('riddle2');
+var riddle3 = document.getElementById('riddle3');
+
+
 
 // Local Storage //
 
 // Connects to index.html for user input
 // Connects to scoreboard.html to assign the data  
 
-    // check if there is anything in the LS = if/else
-    // If there's data in LS
-        // *retrieve* data from LS
-        // *parse* the LS data
-        // *assign* that data to the place it will be used - scoreboard.html
-    // else - create instances to paint the page
+// check if there is anything in the LS = if/else
+// If there's data in LS
+// *retrieve* data from LS
+// *parse* the LS data
+// *assign* that data to the place it will be used - scoreboard.html
+// else - create instances to paint the page
 
 // Constructors //
 
@@ -41,20 +49,30 @@ var spaceshipStone = document.getElementById('');
 
 // Shape events //
 
-// Handle left stone click
-    // after user clicks on stone - open P1 HTML
-    // 
+function clickHandler(event){
+  if(event.target.id === 'shape1'){
+    riddle1.style.display = 'block';
+    riddle2.style.display = 'none';
+    riddle3.style.display = 'none';
+  } else if(event.target.id === 'shape2'){
+    riddle1.style.display = 'none';
+    riddle2.style.display = 'block';
+    riddle3.style.display = 'none';
+  } else if(event.target.id === 'shape3'){
+    riddle1.style.display = 'none';
+    riddle2.style.display = 'none';
+    riddle3.style.display = 'block';
+  }
+}
 
-// Handle middle stone click
 
-// Handle right stone click
 
 // Handle spaceship click
-    // Last game event if/else
-    // If user got the correct answers - You Win
-        // Save score to LS
-        // Assign score to scoreboard
-    // else - Game Over
+// Last game event if/else
+// If user got the correct answers - You Win
+// Save score to LS
+// Assign score to scoreboard
+// else - Game Over
 
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -72,6 +90,8 @@ var spaceshipStone = document.getElementById('');
 // Shape events: //
 
 // Click on left stone event listener
+
+shapeClick.addEventListener('click',clickHandler);
 
 // Click on middle stone event listener
 
