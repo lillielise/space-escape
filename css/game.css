@@ -25,14 +25,7 @@ body {
 
 
 
-#shape1 {
-  z-index: 2;
-  height: 100px;
-  position: absolute;
-  margin-top: 200px;
-  margin-left: 400px;
 
-}
 
 @keyframes spin {
   100% {
@@ -73,19 +66,51 @@ body {
   display: none;
 }
 
+/* Glow styling */
 
-#glow1 {
+.glow {
 box-shadow:
 0 0 100px 50px #f0f,
 0 0 140px 70px #0ff;
-margin-top: 250px;
-margin-left: 450px;
 z-index: 1;
 position: absolute;
 padding: 5px;
 width: 1px;
 height: 1px;
 border: 1px solid black;
+
+}
+
+
+#glow1 {
+margin-top: 250px;
+margin-left: 450px;
+
+
+}
+
+#glow2 {
+  margin-top: 200px;
+  margin-left: 740px;
+  display: none;
+  }
+
+#glow3 {
+  margin-top: 260px;
+  margin-left: 1040px;
+  display: none;
+  }
+
+
+/* Shape styling */
+
+#shape1 {
+  z-index: 2;
+  height: 100px;
+  position: absolute;
+  margin-top: 200px;
+  margin-left: 400px;
+
 }
 
 #shape2 {
@@ -107,37 +132,36 @@ border: 1px solid black;
 
 /* Riddle Divs */
 
-#riddle1 {
-  display: none;
-  height: 50px;
-  width: 400px;
-  padding:20px;
+.riddle {
   z-index: 2;
-  text: justify; 
+  display: none;
+  text-align: center; 
   position: absolute;
-  margin-top: 350px;
-  margin-left: 350px;
   line-height: 30px;
   font-size: 30px;
   letter-spacing: 2px;
 }
 
+#riddle1 {
+  height: 50px;
+  width: 400px;
+  padding:20px;
+  margin-top: 350px;
+  margin-left: 350px;
+}
+
 #riddle2 {
-  display: none;
-  z-index: 2;
-  position: absolute;
   height: 200px;
-  width: 200px;
-  background-color: cyan;
+  width: 300px;
+  margin-top: 300px;
+  margin-left: 600px;
 }
 
 #riddle3 {
-  display: none;
-  z-index: 2;
-  position: absolute;
   height: 200px;
-  width: 200px;
-  background-color:greenyellow;
+  width: 300px;
+  margin-top: 350px;
+  margin-left: 900px;
 }
 
 
@@ -160,20 +184,11 @@ border: 1px solid black;
   border: 25px solid black;
 }
 
-#star {
+.star {
  display: none;
- 
 
 }
 
-#star2 {
- display: none;
-
-
-}
-
-#star3 {
- display: none;
-
-
+#star2, #star3 {
+  display: none;
 }
