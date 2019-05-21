@@ -6,7 +6,7 @@ body {
 }
 
 #game-container {
- height: 650px;
+ height: 700px;
  color: white;
 }
 
@@ -179,29 +179,26 @@ margin-left: 450px;
 
 #you-win {
   display: none;
-  /* z-index: 2;
-  position: absolute; */
-  height: 200px;
-  width: 200px;
-  background-color: green;
-}
-
-#game-over {
+  font-size: 350px;
+  text-align: center;
+  font-family: 'Bungee Shade', cursive;
+  color: white;
+ }
+ 
+ #game-over {
   display: none;
-  /* z-index: 2;
-  position: absolute; */
-  height: 200px;
-  width: 200px;
-  background-color: salmon;
-}
-
+  font-size: 350px;
+  text-align: center;
+  font-family: 'Bungee Shade', cursive;
+  color: white;
+ }
 /* Footer */
 
 
 #footer {
   background-color: black;
   width: 100%; 
-  padding: 25px;
+  padding: 20px;
   border: 25px solid black;
 }
 

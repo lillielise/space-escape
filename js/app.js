@@ -16,6 +16,7 @@ var userGuesses = 0;
 // DOM - Shapes
 
 var shapeClick = document.getElementById('shape-click');
+var gamePage = document.getElementById('game-page');
 
 var shape1 = document.getElementById('shape1');
 var shape2 = document.getElementById('shape2');
@@ -68,6 +69,17 @@ var gameOver = document.getElementById('game-over');
 
 // Helper Functions //
 
+function gameOverDisplay(){
+  // code block - display 'Game Over' msg
+  gamePage.innerHTML = '';
+  gameOver.style.display = 'block';
+  // link to scoreboard
+  setTimeout(function() {
+    window.location = 'https://lillielise.github.io/space-escape/scoreboard';
+  }, 3000);
+
+}
+
 // function winValidator
 
 // Event Handlers //
@@ -88,11 +100,7 @@ function clickHandler(event){
     avatar.style.transform = 'translate(-400px, -240px)';
     avatar.style.transition = '1s';
 
-<<<<<<< HEAD
-  } else if(event.target.id === 'shape2'){
-=======
   } if(event.target.id === 'shape2' && glow2.style.display === 'block'){
->>>>>>> 84fc0ca166d22af130924b517cc608018f9cddb2
     riddle1.style.display = 'none';
     riddle2.style.display = 'block';
     riddle3.style.display = 'none';
@@ -119,7 +127,7 @@ function clickHandler(event){
 
 function submitRiddleOneHandler(event){
   event.preventDefault();
-  
+
   var riddleOneAnswerCheck = event.target.riddleOneAnswer.value;
   if (riddleOneAnswerCheck === 'stars'){
     points += 5;
@@ -139,9 +147,10 @@ function submitRiddleOneHandler(event){
     // remove event handler
     riddleOneAnswer.removeEventListener('submit', submitRiddleOneHandler);
     // game over msg
-    gameOver.style.display = 'block';
     // save to LS
 
+
+    gameOverDisplay();
   }
 
 }
@@ -167,7 +176,7 @@ function submitRiddleTwoHandler(event){
     // remove event handler
     riddleOneAnswer.removeEventListener('submit', submitRiddleOneHandler);
     // game over msg
-    gameOver.style.display = 'block';
+    gameOverDisplay();
     // save to LS
 
   }
@@ -185,40 +194,41 @@ function submitRiddleThreeHandler(event){
     console.log(points);
 
     // YOU WIN Function call
-    totalGameScore();
+    youWinDisplay();
 
-  }  else if(userGuesses < 5){
+  } if(userGuesses < 5){
     userGuesses++;
     console.log(`number of userGuesses is ${userGuesses}`);
 
-  } else if(userGuesses === 5){
+  } if(userGuesses === 5){
     // remove event handler
     riddleOneAnswer.removeEventListener('submit', submitRiddleOneHandler);
     // game over msg
-    gameOver.style.display = 'block';
+    gameOverDisplay();
     // save to LS
 
   }
+
 }
 
 // Handle spaceship click
 
 // Total Score Function //
 
-function totalGameScore(){
-// Last game event if/else
-  // while (userGuesses < 5){
+function youWinDisplay(){
   // Save score to LS
   // Assign score to scoreboard
 
-  if(points === 15){
-    // code block - display 'you win' msg
-    youWin.style.display = 'block';
+  gamePage.innerHTML = '';
+  youWin.style.display = 'block';
 
-    // link to scoreboard.html
-  }
+
+  // link to scoreboard.html
+  setTimeout(function() {
+    window.location = 'https://lillielise.github.io/space-escape/scoreboard';
+  }, 3000);
 }
-// }
+
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //// EXECUTABLE CODE ////
