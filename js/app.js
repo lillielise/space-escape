@@ -5,6 +5,8 @@
 
 // Global Varriables //
 
+var points = 0;
+
 // DOM
 
 
@@ -16,7 +18,12 @@ var shape1 = document.getElementById('shape1');
 var shape2 = document.getElementById('shape2');
 var shape3 = document.getElementById('shape3');
 
+var glow1 = document.getElementById('glow1');
+
+var avatar = document.getElementById('avatar');
+
 var riddle1 = document.getElementById('riddle1');
+var riddleOneAnswer = document.getElementById('riddleOneQuestion');
 var riddle2 = document.getElementById('riddle2');
 var riddle3 = document.getElementById('riddle3');
 
@@ -25,7 +32,7 @@ var riddle3 = document.getElementById('riddle3');
 // Local Storage //
 
 // Connects to index.html for user input
-// Connects to scoreboard.html to assign the data  
+// Connects to scoreboard.html to assign the data
 
 // check if there is anything in the LS = if/else
 // If there's data in LS
@@ -51,9 +58,16 @@ var riddle3 = document.getElementById('riddle3');
 
 function clickHandler(event){
   if(event.target.id === 'shape1'){
+    
     riddle1.style.display = 'block';
     riddle2.style.display = 'none';
     riddle3.style.display = 'none';
+    glow1.style.display = 'none';
+
+    avatar.style.transform = 'translate(-400px, -240px)';
+    avatar.style.transition = '2s';
+    
+
   } else if(event.target.id === 'shape2'){
     riddle1.style.display = 'none';
     riddle2.style.display = 'block';
@@ -65,6 +79,20 @@ function clickHandler(event){
   }
 }
 
+
+
+// Riddle answers validation  //
+
+function submitRiddleHandler(event){
+  event.preventDefault();
+  var riddleOneAnswerCheck = event.target.riddleOneAnswer.value;
+  if (riddleOneAnswerCheck === 'stars'){
+    points += 5;
+    console.log(points);
+  }
+
+  console.log ('you clicked');
+}
 
 
 // Handle spaceship click
@@ -92,6 +120,12 @@ function clickHandler(event){
 // Click on left stone event listener
 
 shapeClick.addEventListener('click',clickHandler);
+
+riddleOneQuestion.addEventListener('submit', submitRiddleHandler);
+
+// click on submit riddle one event listener
+
+
 
 // Click on middle stone event listener
 
