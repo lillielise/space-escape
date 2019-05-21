@@ -27,6 +27,8 @@ var star2 = document.getElementById('star2');
 var star3 = document.getElementById('star3');
 
 var glow1 = document.getElementById('glow1');
+var glow2 = document.getElementById('glow2');
+var glow3 = document.getElementById('glow3');
 
 var avatar = document.getElementById('avatar');
 
@@ -76,27 +78,37 @@ var gameOver = document.getElementById('game-over');
 
 function clickHandler(event){
   if(event.target.id === 'shape1'){
-    
+
     riddle1.style.display = 'block';
     riddle2.style.display = 'none';
     riddle3.style.display = 'none';
 
-    // star.style.display = 'inline';
-    // glow1.style.display = 'none';
 
-    // // move avatar to shape
-    // avatar.style.transform = 'translate(-400px, -240px)';
-    // avatar.style.transition = '2s';
+    //  move avatar to shape
+    avatar.style.transform = 'translate(-400px, -240px)';
+    avatar.style.transition = '1s';
 
-
+<<<<<<< HEAD
   } else if(event.target.id === 'shape2'){
+=======
+  } if(event.target.id === 'shape2' && glow2.style.display === 'block'){
+>>>>>>> 84fc0ca166d22af130924b517cc608018f9cddb2
     riddle1.style.display = 'none';
     riddle2.style.display = 'block';
     riddle3.style.display = 'none';
-  } else if(event.target.id === 'shape3'){
+
+    //  move avatar to shape
+    avatar.style.transform = 'translate(-90px, -280px)';
+    avatar.style.transition = '1s';
+
+  } if(event.target.id === 'shape3' && glow3.style.display === 'block'){
     riddle1.style.display = 'none';
     riddle2.style.display = 'none';
     riddle3.style.display = 'block';
+
+    //  move avatar to shape
+    avatar.style.transform = 'translate(190px, -230px)';
+    avatar.style.transition = '2s';
   }
 }
 
@@ -113,6 +125,10 @@ function submitRiddleOneHandler(event){
     points += 5;
     star.style.display = 'inline';
     riddle1.style.display = 'none';
+    glow1.style.display = 'none';
+    glow2.style.display = 'block';
+    shape1.style.display = 'none';
+
     console.log(points);
 
   } else if(userGuesses < 5){
@@ -137,6 +153,10 @@ function submitRiddleTwoHandler(event){
     points += 5;
     star2.style.display = 'inline';
     riddle2.style.display = 'none';
+    glow2.style.display = 'none';
+    glow3.style.display = 'block';
+    shape2.style.display = 'none';
+
     console.log(points);
 
   } else if(userGuesses < 5){
@@ -160,6 +180,8 @@ function submitRiddleThreeHandler(event){
     points += 5;
     star3.style.display = 'inline';
     riddle3.style.display = 'none';
+    glow3.style.display = 'none';
+    shape3.style.display = 'none';
     console.log(points);
 
     // YOU WIN Function call

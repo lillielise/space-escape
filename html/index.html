@@ -17,10 +17,10 @@
         <img src="http://placehold.it/100x100/000" alt="logo" title="logo">
         <ul>
             <li>
-                <a href="scoreboard"> Nav Item 1</a>
+                <a href="scoreboard.html"> High Scores</a>
             </li>
             <li>
-                <a href="aboutus"> Nav Item 2</a>
+                <a href="aboutus.html"> About Us</a>
             </li>
         </ul>
     </nav>
@@ -33,23 +33,28 @@
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus convallis cursus convallis. Vivamus suscipit eros erat, a venenatis justo elementum vel. Mauris dapibus sem eu libero commodo vestibulum. Praesent vel dictum urna. Vestibulum placerat sem ex, eu rutrum nibh tempus vel. Mauris consequat magna rutrum mauris convallis vulputate. Nulla facilisi. Suspendisse potenti. Duis gravida nunc in erat malesuada porta. Suspendisse sed mollis libero. Phasellus nulla tortor, rutrum a mauris sed, venenatis ullamcorper eros. Integer eget porttitor ligula. Fusce ullamcorper ullamcorper est, sollicitudin faucibus diam semper vitae. Donec feugiat sapien sed arcu aliquam, at tristique ex tempus. Quisque nec pharetra ex. Praesent at purus at arcu rhoncus posuere.</p>
   </main>
     <footer> 
-    <form>
+    <form id="start">
       <fieldset>
-        <!-- <legend>New Player</legend> -->
-        <label>Name: </label>
-        <input name="Name" type="text" size="15" 
-        placeholder="New Player Name"/>
+          <input name="playername" type="text" size="15"
+          placeholder="New Player Name"/>
       </fieldset>
-    </form>
+      
+     <button type="submit" onclick="location.href='game.html'">Start</button>
+     <!-- <button type="submit">Start</button> -->
+
+
+     <!-- onclick="location.href='http://www.example.com'" -->
+      
+   </form>
   
-    
+<!--     
     <div>
-        <button>Call to Action</button>
-    </div>
+        <button id="start">Start</button>
+    </div> -->
   </footer> 
 
   
-<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="../js/homepage.js"></script>
 
 </body>
 </html>
@@ -62,3 +67,18 @@
 -p with lorem ispsum
 -name input field
 -start button with empty link -->
+
+<!-- <div class='wrapper'>
+  <form id='nameForm'>
+  <div class='form-uname'>
+      <label id='nameLable' for='nameField'>Create a username:</label>
+      <input id='nameField' type='text' maxlength='25'></input>
+  </div>
+  <div class='form-sub'>
+      <button id='subButton' type='button'>Print your name!</button>
+  </div>
+  </form> -->
+  
+  <!-- <div>
+      <p id='result'></p></div>
+  </div> -->
