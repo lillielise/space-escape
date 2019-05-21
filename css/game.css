@@ -1,7 +1,7 @@
 /* Header */
 
-main {
-  background-image: url('img/milky-way-2675322_1920.jpg');
+body {
+  background-image: url('../img/milky-way-2675322_1920.jpg');
   height: 100%;
 }
 
@@ -162,15 +162,18 @@ border: 1px solid black;
 
 #star {
  display: none;
+ 
 
 }
 
 #star2 {
  display: none;
 
+
 }
 
 #star3 {
  display: none;
+
 
 }
