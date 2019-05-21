@@ -29,8 +29,12 @@ var avatar = document.getElementById('avatar');
 
 var riddle1 = document.getElementById('riddle1');
 var riddleOneAnswer = document.getElementById('riddleOneQuestion');
+
 var riddle2 = document.getElementById('riddle2');
+var riddleTwoAnswer = document.getElementById('riddleTwoQuestion');
+
 var riddle3 = document.getElementById('riddle3');
+var riddleThreeAnswer = document.getElementById('riddleThreeQuestion');
 
 
 
@@ -92,7 +96,7 @@ function clickHandler(event){
 
 // Riddle answers validation  //
 
-function submitRiddleHandler(event){
+function submitRiddleOneHandler(event){
   event.preventDefault();
   var riddleOneAnswerCheck = event.target.riddleOneAnswer.value;
   if (riddleOneAnswerCheck === 'stars'){
@@ -103,9 +107,29 @@ function submitRiddleHandler(event){
 
   }
 
-  console.log ('you clicked');
 }
 
+function submitRiddleTwoHandler(event){
+  event.preventDefault();
+  var riddleTwoAnswerCheck = event.target.riddleTwoAnswer.value;
+  if (riddleTwoAnswerCheck === 'mercury'){
+    points += 5;
+    star2.style.display = 'inline';
+    riddle2.style.display = 'none';
+    console.log(points);
+  }
+}
+
+function submitRiddleThreeHandler(event){
+  event.preventDefault();
+  var riddleThreeAnswerCheck = event.target.riddleThreeAnswer.value;
+  if (riddleThreeAnswerCheck === 'footsteps'){
+    points += 5;
+    star3.style.display = 'inline';
+    riddle3.style.display = 'none';
+    console.log(points);
+  }
+}
 
 // Handle spaceship click
 // Last game event if/else
@@ -133,7 +157,11 @@ function submitRiddleHandler(event){
 
 shapeClick.addEventListener('click',clickHandler);
 
-riddleOneQuestion.addEventListener('submit', submitRiddleHandler);
+riddleOneAnswer.addEventListener('submit', submitRiddleOneHandler);
+
+riddleTwoAnswer.addEventListener('submit', submitRiddleTwoHandler);
+
+riddleThreeAnswer.addEventListener('submit', submitRiddleThreeHandler);
 
 // click on submit riddle one event listener
 

@@ -3,8 +3,8 @@
 
 
   <head>
-    <link rel = "stylesheet" href = "css/reset.css">
-    <link rel = "stylesheet" href = "css/game.css">
+    <link rel = "stylesheet" href = "../css/reset.css">
+    <link rel = "stylesheet" href = "../css/game.css">
   </head>
 
   <header>
@@ -33,19 +33,35 @@
           And by day they are lost without being stolen. What are they?</label>
         <form id = "riddleOneQuestion">
           <input type = "text" name = "riddleOneAnswer" required/>
-          <input type = "submit" name = "riddleOneSubmit">
+          <button type = "submit">Submit!</button>
         </form>
       </div>
-      <div id='riddle2'></div>
-      <div id='riddle3'></div>
+
+
+      <div id='riddle2'>
+        <label for = "riddleTwoAnswer">What planet has the shortest year?</label>
+        <form id = "riddleTwoQuestion">
+          <input type = "text" name = "riddleTwoAnswer" required/>
+          <button type = "submit">Submit!</button>  
+        </form>
+      </div>
+
+      <div id='riddle3'>
+        <label for = "riddleThreeAnswer">The more you take, the more you leave behind. What am I?</label>
+        <form id = "riddleThreeQuestion">
+          <input type = "text" name = "riddleThreeAnswer" required/>
+          <button type = "submit">Submit!</button>  
+        </form>
+      </div>
+
     </section>
     
     
     <!-- Avatar -->
-    <img id = "avatar" src= "img/kisspng-astronaut-outer-space-euclidean-vector-astronaut-vector-material-5a79a47ee78d85.4084692815179214069485.png">
+    <img id = "avatar" src= "../img/kisspng-astronaut-outer-space-euclidean-vector-astronaut-vector-material-5a79a47ee78d85.4084692815179214069485.png">
 
     <!-- Rocketship -->
-    <img id = "spaceship" src= "img/Spaceship-PNG-Image.png">
+    <img id = "spaceship" src= "../img/Spaceship-PNG-Image.png">
     </section>
 
   </main>
@@ -58,7 +74,7 @@
         </div>
       <!-- </section> -->
     
-    <script src = "js/app.js"></script>
+    <script src = "../js/app.js"></script>
   </body>
 
 
