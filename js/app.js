@@ -6,6 +6,9 @@
 // Global Varriables //
 
 var points = 0;
+var userGuesses = 0;
+
+// var hasWon = false;
 
 // DOM
 
@@ -65,6 +68,8 @@ var gameOver = document.getElementById('game-over');
 
 // Helper Functions //
 
+// function winValidator
+
 // Event Handlers //
 
 // Handle 'Start Game' button click
@@ -83,7 +88,11 @@ function clickHandler(event){
     avatar.style.transform = 'translate(-400px, -240px)';
     avatar.style.transition = '1s';
 
+<<<<<<< HEAD
+  } else if(event.target.id === 'shape2'){
+=======
   } if(event.target.id === 'shape2' && glow2.style.display === 'block'){
+>>>>>>> 84fc0ca166d22af130924b517cc608018f9cddb2
     riddle1.style.display = 'none';
     riddle2.style.display = 'block';
     riddle3.style.display = 'none';
@@ -106,8 +115,11 @@ function clickHandler(event){
 
 // Riddle answers validation handlers  //
 
+
+
 function submitRiddleOneHandler(event){
   event.preventDefault();
+  
   var riddleOneAnswerCheck = event.target.riddleOneAnswer.value;
   if (riddleOneAnswerCheck === 'stars'){
     points += 5;
@@ -118,6 +130,17 @@ function submitRiddleOneHandler(event){
     shape1.style.display = 'none';
 
     console.log(points);
+
+  } else if(userGuesses < 5){
+    userGuesses++;
+    console.log(`number of userGuesses is ${userGuesses}`);
+
+  } else if(userGuesses === 5){
+    // remove event handler
+    riddleOneAnswer.removeEventListener('submit', submitRiddleOneHandler);
+    // game over msg
+    gameOver.style.display = 'block';
+    // save to LS
 
   }
 
@@ -135,6 +158,18 @@ function submitRiddleTwoHandler(event){
     shape2.style.display = 'none';
 
     console.log(points);
+
+  } else if(userGuesses < 5){
+    userGuesses++;
+    console.log(`number of userGuesses is ${userGuesses}`);
+
+  } else if(userGuesses === 5){
+    // remove event handler
+    riddleOneAnswer.removeEventListener('submit', submitRiddleOneHandler);
+    // game over msg
+    gameOver.style.display = 'block';
+    // save to LS
+
   }
 }
 
@@ -149,7 +184,20 @@ function submitRiddleThreeHandler(event){
     shape3.style.display = 'none';
     console.log(points);
 
+    // YOU WIN Function call
     totalGameScore();
+
+  }  else if(userGuesses < 5){
+    userGuesses++;
+    console.log(`number of userGuesses is ${userGuesses}`);
+
+  } else if(userGuesses === 5){
+    // remove event handler
+    riddleOneAnswer.removeEventListener('submit', submitRiddleOneHandler);
+    // game over msg
+    gameOver.style.display = 'block';
+    // save to LS
+
   }
 }
 
@@ -157,22 +205,20 @@ function submitRiddleThreeHandler(event){
 
 // Total Score Function //
 
-// Last game event if/else
 function totalGameScore(){
+// Last game event if/else
+  // while (userGuesses < 5){
   // Save score to LS
   // Assign score to scoreboard
+
   if(points === 15){
     // code block - display 'you win' msg
     youWin.style.display = 'block';
 
     // link to scoreboard.html
-
-  } else {
-    // code block - display 'Game Over' msg
-    gameOver.style.display = 'block';
-    // link to scoreboard
   }
 }
+// }
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //// EXECUTABLE CODE ////
@@ -197,5 +243,3 @@ riddleTwoAnswer.addEventListener('submit', submitRiddleTwoHandler);
 riddleThreeAnswer.addEventListener('submit', submitRiddleThreeHandler);
 
 // Spaceship event listener
-
-
