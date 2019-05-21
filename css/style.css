@@ -44,23 +44,22 @@ h1{
 
 main p{
   text-align: center;
-  margin: 0px 200px 0px 200px;
+  margin: 0px 75px 0px 75px;
 }
 
 #hero{
-  margin: 100px 300px 30px 300px;
+  padding: 100px 75px 30px 170px;
 }
 
 #headshots li{
-  display: inline-block;
-  margin: 0px 30px 0px 20px;
 
-  
 }
+.biopic{
+  display: inline-block;
+  float: left;
 
-
-footer{
-  margin: 0px 200px 0px 200px;
+}footer{
+  margin: 0px 75px 0px 75px;
   text-align: center;
-  padding: 10px 200px 10px 200px;
+  padding: 10px 75px 10px 75px;
 }
