@@ -1,6 +1,6 @@
 /* Header */
 
-body {
+main {
   background-image: url('img/milky-way-2675322_1920.jpg');
   height: 100%;
 }
@@ -14,14 +14,6 @@ body {
 
 /* Game Time */
 
-#background {
-  border: 30px black solid;
-  position: absolute;
-  width: 800px;
-  margin-top: 100px;
-  margin-left: 350px;
-  z-index: 1;
-}
 
 #avatar {
   z-index: 2;
@@ -37,16 +29,71 @@ body {
   z-index: 2;
   height: 100px;
   position: absolute;
-  margin-top: 300px;
-  margin-left: 650px;
+  margin-top: 200px;
+  margin-left: 400px;
+
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spin {
+  animation: spin 1s infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes wiggle {
+  10%,
+  30% {
+    transform: translate3d(-13px, 0, 50px);
+    opacity:1;
+
+    
+  }
+  30%,
+  70% {
+    transform: translate3d(16px, -500px, -200px);
+    opacity: .5;
+  }
+  90% {
+    opacity: 0;
+    display: none;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+.wiggle {
+  animation: wiggle 5s;
+  display: none;
+}
+
+
+#glow1 {
+box-shadow:
+0 0 100px 50px #f0f,
+0 0 140px 70px #0ff;
+margin-top: 250px;
+margin-left: 450px;
+z-index: 1;
+position: absolute;
+padding: 5px;
+width: 1px;
+height: 1px;
+border: 1px solid black;
 }
 
 #shape2 {
   z-index: 2;
   height: 100px;
   position: absolute;
-  margin-top: 250px;
-  margin-left: 800px;
+  margin-top: 150px;
+  margin-left: 700px;
   
 }
 
@@ -54,21 +101,31 @@ body {
   z-index: 2;
   position: absolute;
   height: 100px;
-  margin-top: 300px;
-  margin-left: 950px;
+  margin-top: 200px;
+  margin-left: 1000px;
 }
 
 /* Riddle Divs */
 
 #riddle1 {
   display: none;
-  height: 200px;
-  width: 200px;
-  background-color: red;
+  height: 50px;
+  width: 400px;
+  padding:20px;
+  z-index: 2;
+  text: justify; 
+  position: absolute;
+  margin-top: 350px;
+  margin-left: 350px;
+  line-height: 30px;
+  font-size: 30px;
+  letter-spacing: 2px;
 }
 
 #riddle2 {
   display: none;
+  z-index: 2;
+  position: absolute;
   height: 200px;
   width: 200px;
   background-color: cyan;
@@ -76,6 +133,8 @@ body {
 
 #riddle3 {
   display: none;
+  z-index: 2;
+  position: absolute;
   height: 200px;
   width: 200px;
   background-color:greenyellow;
@@ -87,13 +146,31 @@ body {
   z-index: 2;
   height: 200px;
   position: absolute;
-  margin-left: 400px;
+  margin-left: 150px;
   margin-top: 300px;
 }
 
+/* Footer */
+
+
 #footer{
-  background-color: rgb(222, 211, 211);
-  /* width: 100%; */
+  background-color: black;
+  width: 100%; 
   padding: 25px;
   border: 25px solid black;
+}
+
+#star {
+ display: none;
+
+}
+
+#star2 {
+ display: none;
+
+}
+
+#star3 {
+ display: none;
+
 }
