@@ -58,6 +58,31 @@ body {
   margin-left: 950px;
 }
 
+/* Riddle Divs */
+
+#riddle1 {
+  display: none;
+  height: 200px;
+  width: 200px;
+  background-color: red;
+}
+
+#riddle2 {
+  display: none;
+  height: 200px;
+  width: 200px;
+  background-color: cyan;
+}
+
+#riddle3 {
+  display: none;
+  height: 200px;
+  width: 200px;
+  background-color:greenyellow;
+}
+
+
+
 #spaceship {
   z-index: 2;
   height: 200px;
