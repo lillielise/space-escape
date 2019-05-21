@@ -6,6 +6,9 @@
 // Global Varriables //
 
 var points = 0;
+var userGuesses = 0;
+
+// var hasWon = false;
 
 // DOM
 
@@ -63,6 +66,8 @@ var gameOver = document.getElementById('game-over');
 
 // Helper Functions //
 
+// function winValidator
+
 // Event Handlers //
 
 // Handle 'Start Game' button click
@@ -84,7 +89,6 @@ function clickHandler(event){
     // avatar.style.transition = '2s';
 
 
-
   } else if(event.target.id === 'shape2'){
     riddle1.style.display = 'none';
     riddle2.style.display = 'block';
@@ -99,14 +103,28 @@ function clickHandler(event){
 
 // Riddle answers validation handlers  //
 
+
+
 function submitRiddleOneHandler(event){
   event.preventDefault();
+  
   var riddleOneAnswerCheck = event.target.riddleOneAnswer.value;
   if (riddleOneAnswerCheck === 'stars'){
     points += 5;
     star.style.display = 'inline';
     riddle1.style.display = 'none';
     console.log(points);
+
+  } else if(userGuesses < 5){
+    userGuesses++;
+    console.log(`number of userGuesses is ${userGuesses}`);
+
+  } else if(userGuesses === 5){
+    // remove event handler
+    riddleOneAnswer.removeEventListener('submit', submitRiddleOneHandler);
+    // game over msg
+    gameOver.style.display = 'block';
+    // save to LS
 
   }
 
@@ -120,6 +138,18 @@ function submitRiddleTwoHandler(event){
     star2.style.display = 'inline';
     riddle2.style.display = 'none';
     console.log(points);
+
+  } else if(userGuesses < 5){
+    userGuesses++;
+    console.log(`number of userGuesses is ${userGuesses}`);
+
+  } else if(userGuesses === 5){
+    // remove event handler
+    riddleOneAnswer.removeEventListener('submit', submitRiddleOneHandler);
+    // game over msg
+    gameOver.style.display = 'block';
+    // save to LS
+
   }
 }
 
@@ -132,7 +162,20 @@ function submitRiddleThreeHandler(event){
     riddle3.style.display = 'none';
     console.log(points);
 
+    // YOU WIN Function call
     totalGameScore();
+
+  }  else if(userGuesses < 5){
+    userGuesses++;
+    console.log(`number of userGuesses is ${userGuesses}`);
+
+  } else if(userGuesses === 5){
+    // remove event handler
+    riddleOneAnswer.removeEventListener('submit', submitRiddleOneHandler);
+    // game over msg
+    gameOver.style.display = 'block';
+    // save to LS
+
   }
 }
 
@@ -140,22 +183,20 @@ function submitRiddleThreeHandler(event){
 
 // Total Score Function //
 
-// Last game event if/else
 function totalGameScore(){
+// Last game event if/else
+  // while (userGuesses < 5){
   // Save score to LS
   // Assign score to scoreboard
+
   if(points === 15){
     // code block - display 'you win' msg
     youWin.style.display = 'block';
 
     // link to scoreboard.html
-
-  } else {
-    // code block - display 'Game Over' msg
-    gameOver.style.display = 'block';
-    // link to scoreboard
   }
 }
+// }
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //// EXECUTABLE CODE ////
@@ -180,5 +221,3 @@ riddleTwoAnswer.addEventListener('submit', submitRiddleTwoHandler);
 riddleThreeAnswer.addEventListener('submit', submitRiddleThreeHandler);
 
 // Spaceship event listener
-
-
