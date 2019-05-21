@@ -38,6 +38,10 @@ var riddleTwoAnswer = document.getElementById('riddleTwoQuestion');
 var riddle3 = document.getElementById('riddle3');
 var riddleThreeAnswer = document.getElementById('riddleThreeQuestion');
 
+// Win/Lose MSG
+
+var youWin = document.getElementById('you-win');
+var gameOver = document.getElementById('game-over');
 
 
 // Local Storage //
@@ -65,7 +69,7 @@ var riddleThreeAnswer = document.getElementById('riddleThreeQuestion');
 
 // Handle 'Start Game' button click
 
-// Shape events //
+// Shape events handlers //
 
 function clickHandler(event){
   if(event.target.id === 'shape1'){
@@ -100,8 +104,7 @@ function clickHandler(event){
 }
 
 
-
-// Riddle answers validation  //
+// Riddle answers validation handlers  //
 
 function submitRiddleOneHandler(event){
   event.preventDefault();
@@ -145,16 +148,31 @@ function submitRiddleThreeHandler(event){
     glow3.style.display = 'none';
     shape3.style.display = 'none';
     console.log(points);
+
+    totalGameScore();
   }
 }
 
 // Handle spaceship click
-// Last game event if/else
-// If user got the correct answers - You Win
-// Save score to LS
-// Assign score to scoreboard
-// else - Game Over
 
+// Total Score Function //
+
+// Last game event if/else
+function totalGameScore(){
+  // Save score to LS
+  // Assign score to scoreboard
+  if(points === 15){
+    // code block - display 'you win' msg
+    youWin.style.display = 'block';
+
+    // link to scoreboard.html
+
+  } else {
+    // code block - display 'Game Over' msg
+    gameOver.style.display = 'block';
+    // link to scoreboard
+  }
+}
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //// EXECUTABLE CODE ////
@@ -168,9 +186,7 @@ function submitRiddleThreeHandler(event){
 // 'Start Game' button event listener
 
 
-// Shape events: //
-
-// Click on left stone event listener
+// Shape events listeners: //
 
 shapeClick.addEventListener('click',clickHandler);
 
@@ -180,12 +196,6 @@ riddleTwoAnswer.addEventListener('submit', submitRiddleTwoHandler);
 
 riddleThreeAnswer.addEventListener('submit', submitRiddleThreeHandler);
 
-// click on submit riddle one event listener
+// Spaceship event listener
 
 
-
-// Click on middle stone event listener
-
-// Click on right stone event listener
-
-// Click on spaceship event listener
