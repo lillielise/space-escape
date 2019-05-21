@@ -150,10 +150,31 @@ border: 1px solid black;
   margin-top: 300px;
 }
 
+
+/* Win/Lose MSG */
+
+#you-win {
+  display: none;
+  /* z-index: 2;
+  position: absolute; */
+  height: 200px;
+  width: 200px;
+  background-color: green;
+}
+
+#game-over {
+  display: none;
+  /* z-index: 2;
+  position: absolute; */
+  height: 200px;
+  width: 200px;
+  background-color: salmon;
+}
+
 /* Footer */
 
 
-#footer{
+#footer {
   background-color: black;
   width: 100%; 
   padding: 25px;
