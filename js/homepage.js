@@ -29,4 +29,15 @@ function saveToLocalStorage(){
 
 }
 
+var highScores = document.getElementById('highscores');
+function tableHeader(){
+  var trEl = document.createElement('tr');
+  var thEl = document.createElement('th');
+  thEl.textContent = 'Name';
+  trEl.appendChild(thEl);
 
+  var thEl = document.createElement('th');
+  thEl.textContent = 'Score';
+  trEl.appendChild(thEl);
+  highScores.appendChild(trEl);
+}
