@@ -18,6 +18,11 @@ var shape1 = document.getElementById('shape1');
 var shape2 = document.getElementById('shape2');
 var shape3 = document.getElementById('shape3');
 
+// Footer Shapes
+var star = document.getElementById('star');
+var star2 = document.getElementById('star2');
+var star3 = document.getElementById('star3');
+
 var glow1 = document.getElementById('glow1');
 
 var avatar = document.getElementById('avatar');
@@ -62,11 +67,15 @@ function clickHandler(event){
     riddle1.style.display = 'block';
     riddle2.style.display = 'none';
     riddle3.style.display = 'none';
-    glow1.style.display = 'none';
 
-    avatar.style.transform = 'translate(-400px, -240px)';
-    avatar.style.transition = '2s';
-    
+    // star.style.display = 'inline';
+    // glow1.style.display = 'none';
+
+    // // move avatar to shape
+    // avatar.style.transform = 'translate(-400px, -240px)';
+    // avatar.style.transition = '2s';
+
+
 
   } else if(event.target.id === 'shape2'){
     riddle1.style.display = 'none';
@@ -88,7 +97,10 @@ function submitRiddleHandler(event){
   var riddleOneAnswerCheck = event.target.riddleOneAnswer.value;
   if (riddleOneAnswerCheck === 'stars'){
     points += 5;
+    star.style.display = 'inline';
+    riddle1.style.display = 'none';
     console.log(points);
+
   }
 
   console.log ('you clicked');

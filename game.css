@@ -1,6 +1,6 @@
 /* Header */
 
-body {
+main {
   background-image: url('img/milky-way-2675322_1920.jpg');
   height: 100%;
 }
@@ -31,7 +31,48 @@ body {
   position: absolute;
   margin-top: 200px;
   margin-left: 400px;
+
 }
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spin {
+  animation: spin 1s infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes wiggle {
+  10%,
+  30% {
+    transform: translate3d(-13px, 0, 50px);
+    opacity:1;
+
+    
+  }
+  30%,
+  70% {
+    transform: translate3d(16px, -500px, -200px);
+    opacity: .5;
+  }
+  90% {
+    opacity: 0;
+    display: none;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+.wiggle {
+  animation: wiggle 5s;
+  display: none;
+}
+
 
 #glow1 {
 box-shadow:
@@ -105,13 +146,31 @@ border: 1px solid black;
   z-index: 2;
   height: 200px;
   position: absolute;
-  margin-left: 100px;
+  margin-left: 150px;
   margin-top: 300px;
 }
 
+/* Footer */
+
+
 #footer{
   background-color: black;
-  /* width: 100%; */
+  width: 100%; 
   padding: 25px;
   border: 25px solid black;
+}
+
+#star {
+ display: none;
+
+}
+
+#star2 {
+ display: none;
+
+}
+
+#star3 {
+ display: none;
+
 }
