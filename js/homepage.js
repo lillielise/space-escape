@@ -28,11 +28,7 @@ function saveToLocalStorage(){
   console.log("this is my stringify names", stringifyNames);
   localStorage.setItem('players', stringifyNames); 
 }
-if(localStorage.getItem('players')){
-  var retrievedPlayers = localStorage.getItem('players');
-  var parsedPlayers = JSON.parse(retrievedPlayers);
-  namesArray = parsedPlayers;
-}
+
 
 // function tableHeader(){
 //   var trEl = document.createElement('tr');
