@@ -173,6 +173,22 @@ function submitRiddleOneHandler(event){
     // save to LS
 
 
+
+
+////////////////////////LOCAL STORAGE FUNCTION////////////
+
+
+
+    function saveToLocalStorage(){
+      var stringifyNames = JSON.stringify(namesArray);
+      console.log("this is my stringify names", stringifyNames);
+      localStorage.setItem('players', stringifyNames);
+     }
+     if(localStorage.getItem('players')){
+      var retrievedPlayers = localStorage.getItem('players');
+      var parsedPlayers = JSON.parse(retrievedPlayers);
+      namesArray = parsedPlayers;
+     }
     gameOverDisplay();
   }
 
