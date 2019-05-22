@@ -85,25 +85,25 @@ function gameOverDisplay(){
 
 // TABLE HEADER FUNCTION
 
-function makeHeaderRow(){
-  // create the row
-  var trEl = document.createElement('tr');
+// function makeHeaderRow(){
+//   // create the row
+//   var trEl = document.createElement('tr');
 
-  // create, content, append Name cell
-  var thEl = document.createElement('th');
-  thEl.textContent = 'Name';
-  trEl.appendChild(thEl);
+//   // create, content, append Name cell
+//   var thEl = document.createElement('th');
+//   thEl.textContent = 'Name';
+//   trEl.appendChild(thEl);
 
-  // create, content, append Score cell
-  thEl = document.createElement('th');
-  thEl.textContent = 'Score';
-  trEl.appendChild(thEl);
+//   // create, content, append Score cell
+//   thEl = document.createElement('th');
+//   thEl.textContent = 'Score';
+//   trEl.appendChild(thEl);
   
-  // append the row to the table
-  scoresTable.appendChild(trEl);
-}
+//   // append the row to the table
+//   scoresTable.appendChild(trEl);
+// }
 
-makeHeaderRow();
+// makeHeaderRow();
 
 // Event Handlers //
 
@@ -179,16 +179,16 @@ function submitRiddleOneHandler(event){
 
 
 
-    function saveToLocalStorage(){
-      var stringifyNames = JSON.stringify(namesArray);
-      console.log("this is my stringify names", stringifyNames);
-      localStorage.setItem('players', stringifyNames);
-     }
-     if(localStorage.getItem('players')){
-      var retrievedPlayers = localStorage.getItem('players');
-      var parsedPlayers = JSON.parse(retrievedPlayers);
-      namesArray = parsedPlayers;
-     }
+    // function saveToLocalStorage(){
+    //   var stringifyNames = JSON.stringify(namesArray);
+    //   console.log("this is my stringify names", stringifyNames);
+    //   localStorage.setItem('players', stringifyNames);
+    //  }
+    //  if(localStorage.getItem('players')){
+    //   var retrievedPlayers = localStorage.getItem('players');
+    //   var parsedPlayers = JSON.parse(retrievedPlayers);
+    //   namesArray = parsedPlayers;
+    //  }
     gameOverDisplay();
   }
 
