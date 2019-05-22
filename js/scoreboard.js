@@ -11,9 +11,11 @@ var scoresTable = document.getElementById('high-scores');
 // FUNCTIONS
 
 function getNamesFromLS (){
-  var retrievedPlayers = localStorage.getItem('players');
-  var parsedPlayers = JSON.parse(retrievedPlayers);
-  namesArray = parsedPlayers;
+  if (localStorage.getItem('players')){
+    var retrievedPlayers = localStorage.getItem('players');
+    var parsedPlayers = JSON.parse(retrievedPlayers);
+    namesArray = parsedPlayers;
+  }
 }
 
 function getScoresFromLS (){

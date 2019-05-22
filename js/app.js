@@ -205,6 +205,7 @@ function submitRiddleTwoHandler(event){
     riddleOneAnswer.removeEventListener('submit', submitRiddleOneHandler);
     // game over msg
     gameOverDisplay();
+    console.log(scores);
     // save to LS
 
   }
@@ -271,10 +272,10 @@ function youWinDisplay(){
 
 
   // link to scoreboard.html
-  setTimeout(function() {
-    location.href='game.html';
-    window.location = 'https://lillielise.github.io/space-escape/scoreboard';
-  }, 3000);
+  // setTimeout(function() {
+  //   location.href='game.html';
+  //   window.location = 'https://lillielise.github.io/space-escape/scoreboard';
+  // }, 3000);
 }
 
 
@@ -284,9 +285,9 @@ function gameOverDisplay(){
   gamePage.innerHTML = '';
   gameOver.style.display = 'block';
   // link to scoreboard
-  setTimeout(function() {
-    window.location = 'https://lillielise.github.io/space-escape/scoreboard';
-  }, 3000);
+  // setTimeout(function() {
+  //   window.location = 'https://lillielise.github.io/space-escape/scoreboard';
+  // }, 3000);
 
 }
 
