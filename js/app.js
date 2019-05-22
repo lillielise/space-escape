@@ -47,6 +47,9 @@ var riddleThreeAnswer = document.getElementById('riddleThreeQuestion');
 var youWin = document.getElementById('you-win');
 var gameOver = document.getElementById('game-over');
 
+// Scoreboard Table
+
+var scoresTable = document.getElementById('high-scores');
 
 // Local Storage //
 
@@ -80,7 +83,27 @@ function gameOverDisplay(){
 
 }
 
-// function winValidator
+// TABLE HEADER FUNCTION
+
+function makeHeaderRow(){
+  // create the row
+  var trEl = document.createElement('tr');
+
+  // create, content, append Name cell
+  var thEl = document.createElement('th');
+  thEl.textContent = 'Name';
+  trEl.appendChild(thEl);
+
+  // create, content, append Score cell
+  thEl = document.createElement('th');
+  thEl.textContent = 'Score';
+  trEl.appendChild(thEl);
+  
+  // append the row to the table
+  scoresTable.appendChild(trEl);
+}
+
+makeHeaderRow();
 
 // Event Handlers //
 
@@ -237,6 +260,8 @@ function youWinDisplay(){
 
 // Function Calls //
 
+
+
 // Event listeners //
 
 // 'Start Game' button event listener
@@ -252,4 +277,6 @@ riddleTwoAnswer.addEventListener('submit', submitRiddleTwoHandler);
 
 riddleThreeAnswer.addEventListener('submit', submitRiddleThreeHandler);
 
-// Spaceship event listener
+
+
+
