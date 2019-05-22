@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+
+  <head>
+    <link rel = "stylesheet" href = "../css/reset.css">
+    <link rel = "stylesheet" href = "../css/game.css">
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Shade&display=swap" rel="stylesheet">
+  </head>
+
+  <header>
+    <title>Space Escape</title>
+
+  </header>
+
+  <body>
+  
+  <section id = "game-page">
+
+    <section id = "game-container">
+
+    <!-- Create shapes  -->
+    <section id ="shape-click">
+      <img id = "shape1" src= "https://img.icons8.com/ultraviolet/40/000000/crystal.png">
+      <div class = "glow" id = "glow1"></div>
+
+      <img id = "shape2" src= "https://img.icons8.com/ultraviolet/40/000000/crystal.png">
+      <div class = "glow" id = "glow2"></div>
+
+      <img id = "shape3" src= "https://img.icons8.com/ultraviolet/40/000000/crystal.png">
+      <div class = "glow" id = "glow3"></div>
+
+      <div class = "riddle" id = "riddle1">
+        <label for = "riddleOneAnswer">At night they come without being fetched,
+          And by day they are lost without being stolen. What are they?</label>
+        <form id = "riddleOneQuestion" autocomplete="off">
+          <input type = "text" name = "riddleOneAnswer" required/>
+          <button type = "submit">Submit!</button>
+        </form>
+      </div>
+
+
+
+      <div class = "riddle" id='riddle2'>
+
+        <label for = "riddleTwoAnswer">What planet has the shortest year?</label>
+        <form id = "riddleTwoQuestion" autocomplete="off" >
+          <input type = "text" name = "riddleTwoAnswer" required/>
+          <button type = "submit">Submit!</button>  
+        </form>
+      </div>
+
+
+      <div class = "riddle" id='riddle3'>
+        <label for = "riddleThreeAnswer">The more you take, the more you leave behind. What am I?</label>
+        <form id = "riddleThreeQuestion" autocomplete="off">
+          <input type = "text" name = "riddleThreeAnswer" required/>
+          <button type = "submit">Submit!</button>  
+        </form>
+      </div>
+
+    </section>
+    
+    
+    <!-- Avatar -->
+    <img id = "avatar" src= "../img/kisspng-astronaut-outer-space-euclidean-vector-astronaut-vector-material-5a79a47ee78d85.4084692815179214069485.png">
+
+    <!-- Rocketship -->
+    <img id = "spaceship" src= "../img/Spaceship-PNG-Image.png">
+    </section>
+
+
+
+  
+    <!-- <section id="footer-shape-click"> -->
+        <div id = "footer">
+          <img class = "star" id = "star" src= "https://img.icons8.com/color/48/000000/star.png">
+          <img class = "star" id = "star2" src= "https://img.icons8.com/color/48/000000/star.png">
+          <img class = "star" id = "star3" src= "https://img.icons8.com/color/48/000000/star.png">
+        </div>
+      <!-- </section> -->
+
+    </section>
+
+  <!-- Win/Lose  -->
+  <section id = "end-game-msg">
+    <div id = "you-win">You Win!</div>
+    <div id = "game-over">Game over!</div>
+  </section>
+    
+      <div id = "game-over">You lose!</div>
+    </section>
+    
+    <script src = "../js/app.js"></script>
+  </body>
+
+
+
+</html>

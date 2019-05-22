@@ -1,0 +1,212 @@
+/* Header */
+
+body {
+  background-image: url('../img/milky-way-2675322_1920.jpg');
+  height: 100%;
+}
+
+#game-container {
+ height: 700px;
+ color: white;
+}
+
+
+
+/* Game Time */
+
+
+#avatar {
+  z-index: 2;
+  height: 100px;
+  position: absolute;
+  margin-top: 450px;
+  margin-left: 800px;
+}
+
+
+
+
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spin {
+  animation: spin 1s infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes wiggle {
+  10%,
+  30% {
+    transform: translate3d(-13px, 0, 50px);
+    opacity:1;
+
+    
+  }
+  30%,
+  70% {
+    transform: translate3d(16px, -500px, -200px);
+    opacity: .5;
+  }
+  90% {
+    opacity: 0;
+    display: none;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+.wiggle {
+  animation: wiggle 5s;
+  display: none;
+}
+
+/* Glow styling */
+
+.glow {
+box-shadow:
+0 0 100px 50px #f0f,
+0 0 140px 70px #0ff;
+z-index: 1;
+position: absolute;
+padding: 5px;
+width: 1px;
+height: 1px;
+border: 1px solid black;
+
+}
+
+
+#glow1 {
+margin-top: 250px;
+margin-left: 450px;
+
+
+}
+
+#glow2 {
+  margin-top: 200px;
+  margin-left: 740px;
+  display: none;
+  }
+
+#glow3 {
+  margin-top: 260px;
+  margin-left: 1040px;
+  display: none;
+  }
+
+
+/* Shape styling */
+
+#shape1 {
+  z-index: 2;
+  height: 100px;
+  position: absolute;
+  margin-top: 200px;
+  margin-left: 400px;
+
+}
+
+#shape2 {
+  z-index: 2;
+  height: 100px;
+  position: absolute;
+  margin-top: 150px;
+  margin-left: 700px;
+  
+}
+
+#shape3 {
+  z-index: 2;
+  position: absolute;
+  height: 100px;
+  margin-top: 200px;
+  margin-left: 1000px;
+}
+
+/* Riddle Divs */
+
+.riddle {
+  z-index: 2;
+  display: none;
+  text-align: center; 
+  position: absolute;
+  line-height: 30px;
+  font-size: 30px;
+  letter-spacing: 2px;
+}
+
+#riddle1 {
+  height: 50px;
+  width: 400px;
+  padding:20px;
+  margin-top: 350px;
+  margin-left: 350px;
+}
+
+#riddle2 {
+  height: 200px;
+  width: 300px;
+  margin-top: 300px;
+  margin-left: 600px;
+}
+
+#riddle3 {
+  height: 200px;
+  width: 300px;
+  margin-top: 350px;
+  margin-left: 900px;
+}
+
+
+
+#spaceship {
+  z-index: 2;
+  height: 200px;
+  position: absolute;
+  margin-left: 150px;
+  margin-top: 300px;
+}
+
+
+/* Win/Lose MSG */
+
+#you-win {
+  display: none;
+  font-size: 350px;
+  text-align: center;
+  font-family: 'Bungee Shade', cursive;
+  color: white;
+ }
+ 
+ #game-over {
+  display: none;
+  font-size: 350px;
+  text-align: center;
+  font-family: 'Bungee Shade', cursive;
+  color: white;
+ }
+/* Footer */
+
+
+#footer {
+  background-color: black;
+  width: 100%; 
+  padding: 20px;
+  border: 25px solid black;
+}
+
+.star {
+ display: none;
+
+}
+
+#star2, #star3 {
+  display: none;
+}
