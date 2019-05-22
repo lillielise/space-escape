@@ -5,10 +5,11 @@
 
 // Global Varriables //
 
+var playersArray = [];
 var points = 0;
 var userGuesses = 0;
 
-// var hasWon = false;
+retrieveLocalStorage();
 
 // DOM
 
@@ -32,6 +33,7 @@ var glow2 = document.getElementById('glow2');
 var glow3 = document.getElementById('glow3');
 
 var avatar = document.getElementById('avatar');
+var spaceship = document.getElementById('spaceship');
 
 var riddle1 = document.getElementById('riddle1');
 var riddleOneAnswer = document.getElementById('riddleOneQuestion');
@@ -49,7 +51,7 @@ var gameOver = document.getElementById('game-over');
 
 // Scoreboard Table
 
-var scoresTable = document.getElementById('high-scores');
+// var scoresTable = document.getElementById('high-scores');
 
 // Local Storage //
 
@@ -72,38 +74,27 @@ var scoresTable = document.getElementById('high-scores');
 
 // Helper Functions //
 
-function gameOverDisplay(){
-  // code block - display 'Game Over' msg
-  gamePage.innerHTML = '';
-  gameOver.style.display = 'block';
-  // link to scoreboard
-  setTimeout(function() {
-    window.location = 'https://lillielise.github.io/space-escape/scoreboard';
-  }, 3000);
+// function getScore() {
 
-}
+//   scores.push(points);
+//   saveToLocalStorage();
+//   console.log(scores);
+// }
+
+// function saveToLocalStorage(){
+//   var stringifyScore = JSON.stringify(scores);
+//   console.log('this is my stringify score', stringifyScore);
+//   localStorage.setItem('scores', stringifyScore);
+  
+  
+// }
+
+
+
 
 // TABLE HEADER FUNCTION
 
-// function makeHeaderRow(){
-//   // create the row
-//   var trEl = document.createElement('tr');
 
-//   // create, content, append Name cell
-//   var thEl = document.createElement('th');
-//   thEl.textContent = 'Name';
-//   trEl.appendChild(thEl);
-
-//   // create, content, append Score cell
-//   thEl = document.createElement('th');
-//   thEl.textContent = 'Score';
-//   trEl.appendChild(thEl);
-  
-//   // append the row to the table
-//   scoresTable.appendChild(trEl);
-// }
-
-// makeHeaderRow();
 
 // Event Handlers //
 
@@ -170,25 +161,9 @@ function submitRiddleOneHandler(event){
     // remove event handler
     riddleOneAnswer.removeEventListener('submit', submitRiddleOneHandler);
     // game over msg
+
     // save to LS
 
-
-
-
-////////////////////////LOCAL STORAGE FUNCTION////////////
-
-
-
-    // function saveToLocalStorage(){
-    //   var stringifyNames = JSON.stringify(namesArray);
-    //   console.log("this is my stringify names", stringifyNames);
-    //   localStorage.setItem('players', stringifyNames);
-    //  }
-    //  if(localStorage.getItem('players')){
-    //   var retrievedPlayers = localStorage.getItem('players');
-    //   var parsedPlayers = JSON.parse(retrievedPlayers);
-    //   namesArray = parsedPlayers;
-    //  }
     gameOverDisplay();
   }
 
@@ -216,9 +191,22 @@ function submitRiddleTwoHandler(event){
     riddleOneAnswer.removeEventListener('submit', submitRiddleOneHandler);
     // game over msg
     gameOverDisplay();
+
     // save to LS
 
   }
+}
+
+
+
+function spaceShipMove (){
+
+  spaceship.style.transform = 'translate(0px, -500px)';
+  spaceship.style.transition = '3s';
+
+  avatar.style.transform = 'translate(-550px, -500px)';
+  avatar.style.transition = '3s';
+
 }
 
 function submitRiddleThreeHandler(event){
@@ -232,8 +220,13 @@ function submitRiddleThreeHandler(event){
     shape3.style.display = 'none';
     console.log(points);
 
+
+    avatar.style.transform = 'translate(-700px, -50px)';
+    avatar.style.transition = '2s';
     // YOU WIN Function call
-    youWinDisplay();
+    // function that moves space ship with delay and screen with delay 
+    setTimeout(spaceShipMove,2000);
+    setTimeout(youWinDisplay, 3000);
 
   } if(userGuesses < 5){
     userGuesses++;
@@ -242,6 +235,7 @@ function submitRiddleThreeHandler(event){
   } if(userGuesses === 5){
     // remove event handler
     riddleOneAnswer.removeEventListener('submit', submitRiddleOneHandler);
+
     // game over msg
     gameOverDisplay();
     // save to LS
@@ -252,10 +246,51 @@ function submitRiddleThreeHandler(event){
 
 // Handle spaceship click
 
+// LS Functions
+
+// Retrieve Names data from LS:
+
+function retrieveLocalStorage(){
+  if (localStorage.players){
+    var unparsedPlayers = localStorage.getItem('players');
+    var parsedPlayers = JSON.parse(unparsedPlayers);
+    playersArray = parsedPlayers;
+    console.log('this is the parsedPlayers' + parsedPlayers);
+  // console.log(playersArray);
+  }
+}
+
+
+
+// function Player(userName, points){
+//   this.userName = userName;
+//   this.points = points;
+//   playersArray.push(this);
+// }
+
+// Set game score data in the same LS contstructor:
+
+function getUserScore() {
+
+  // playersArray[i].name === playersArray[0].name
+      
+  playersArray[0].points = points;
+
+  // save to LS
+  var stringifyNames = JSON.stringify(playersArray);
+  console.log('this is my stringify names', stringifyNames);
+  localStorage.setItem('players', stringifyNames);
+
+}
+
+
 // Total Score Function //
 
 function youWinDisplay(){
+  getUserScore();
   // Save score to LS
+
+
   // Assign score to scoreboard
 
   gamePage.innerHTML = '';
@@ -263,11 +298,24 @@ function youWinDisplay(){
 
 
   // link to scoreboard.html
-  setTimeout(function() {
-    window.location = 'https://lillielise.github.io/space-escape/scoreboard';
-  }, 3000);
+  // setTimeout(function() {
+  //   location.href='game.html';
+  //   window.location = 'https://lillielise.github.io/space-escape/scoreboard';
+  // }, 3000);
 }
 
+
+function gameOverDisplay(){
+  getUserScore();
+  // code block - display 'Game Over' msg
+  gamePage.innerHTML = '';
+  gameOver.style.display = 'block';
+  // link to scoreboard
+  // setTimeout(function() {
+  //   window.location = 'https://lillielise.github.io/space-escape/scoreboard';
+  // }, 3000);
+
+}
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //// EXECUTABLE CODE ////
@@ -275,6 +323,8 @@ function youWinDisplay(){
 // Anything that runs on page load //
 
 // Function Calls //
+
+// saveToLocalStorage();
 
 
 
@@ -284,6 +334,7 @@ function youWinDisplay(){
 
 
 // Shape events listeners: //
+
 
 shapeClick.addEventListener('click',clickHandler);
 
