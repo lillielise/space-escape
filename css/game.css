@@ -16,7 +16,7 @@ body {
 
 
 #avatar {
-  z-index: 2;
+  z-index: 3;
   height: 100px;
   position: absolute;
   margin-top: 450px;
