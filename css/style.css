@@ -1,7 +1,16 @@
+
+body{
+  background-image: url('https://www.goodfreephotos.com/albums/astrophotography/great-stars-from-hubble.jpg');
+  height: 100%;
+}
+
+
+
 header{
   height: 120px;
-  background-color: grey;
+  /* background-color: grey; */
 }
+
 
 
 nav img {
@@ -11,24 +20,59 @@ nav img {
   padding-bottom: 15px;
 }
 
+
+a:link{
+  color:purple;
+}
+
+
+
+a:hover{
+  color: greenyellow;
+}
+
+
+
+a:active{
+  color: yellow;
+}
+
+
+
+a:visited{
+  color: white;
+}
+
+
+
 li {
   display: inline-block;
   margin-left: 150px;
   margin-top: 50px;
   font-size: 1em;
 }
+
+
+
 h1{
-  text-align: center;
-  font-size: 4em;
-  padding:  0px 280px 25px 350px;
- 
+    /* text-align: center; */
+  font-size: 5em;
+  padding:  0px 280px 0px 350px; 
 }
+
+
+
 
 #title{
   text-align: center;
   font-size: 4em;
   padding:  300px 280px 25px 350px;
+  font-family: 'Prosto One', cursive;
+  text-shadow:;
 }
+
+
+
 
 #scoreboard{
   text-align: center;
@@ -36,41 +80,73 @@ h1{
   padding:  250px 280px 25px 350px;
 }
 
+
+
 #topscores{
   text-align: center;
   font-size: 2em;
   padding:  10px 280px 25px 350px
 }
 
+
+
 main p{
   text-align: center;
   margin: 0px 75px 0px 75px;
 }
 
+
+
+input[type=text]{
+  text-align: center;
+  background-color: black;
+  color: white;
+  outline: 3px solid purple;
+}
+
+
+
+button{
+  background-color: purple;
+  color: white;
+  margin-top: 10px;
+}
+
+
+
 #hero{
   padding: 100px 75px 30px 170px;
 }
 
+
+
 #headshots li{
 
 }
+
+
+
 .biopic{
   display: inline-block;
   float: left;
+}
 
-}footer{
+
+
+footer{
   margin: 0px 75px 0px 75px;
   text-align: center;
   padding: 10px 75px 10px 75px;
 }
 
 
-/* Scoreboard */
 
 table {
   margin-left:auto; 
   margin-right:auto;
 }
+
+
 
 th {
   background-color: rgba(155, 155, 155, 0.55);
@@ -79,3 +155,6 @@ th {
   font-weight: bold;
   border: 1px solid black;
 }
+
+
+
