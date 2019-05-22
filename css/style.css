@@ -1,11 +1,30 @@
 
-body{
+/* THIS IS THE BACKGROUND FOR HOMEPAGE */
+#index{
   background-image: url('https://www.goodfreephotos.com/albums/astrophotography/great-stars-from-hubble.jpg');
   height: 100%;
 }
 
 
 
+/* THIS IS THE BACKGROUND FOR SCOREBOARD */
+#scoreboardbody {
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/e3/Magnificent_CME_Erupts_on_the_Sun_-_August_31.jpg');
+}
+
+g
+
+/* THIS IS THE BACKGROUND FOR ABOUT US  */
+#aboutteam {
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/7f/The_Carina_Nebula_%28wallpaper%29.jp');
+}
+
+/* https://images.pexels.com/photos/414834/pexels-photo-414834.jpeg?cs=srgb&dl=colorful-cosmos-crab-nebula-414834.jpg&fm=jpg */
+
+
+
+
+/* THIS IS THE HEADER PER THE ORIGINAL WIREFRAMES */
 header{
   height: 120px;
   /* background-color: grey; */
@@ -13,6 +32,7 @@ header{
 
 
 
+/* THIS IS THE POSITIONING OF THE LOGO IMAGE (CURRENTLY NOT IN USE) */
 nav img {
   float: left; 
   margin-top: 10px;
@@ -21,6 +41,7 @@ nav img {
 }
 
 
+/* THESE A LINKS STYLE THE LINKS AT THE TOP OF THE PAGE */
 a:link{
   color:purple;
 }
@@ -45,6 +66,7 @@ a:visited{
 
 
 
+/* I HONESTLY DON'T REMEMBER OFF THE TOP OF MY HEAD, BUT ITS GLOBAL SO THERES THAT */
 li {
   display: inline-block;
   margin-left: 150px;
@@ -54,26 +76,30 @@ li {
 
 
 
+/* STYLES ALL H1 HEADERS */
 h1{
     /* text-align: center; */
   font-size: 5em;
   padding:  0px 280px 0px 350px; 
+  font-family: 'Prosto One', cursive;
 }
 
 
 
 
-#title{
+/* STYLES THE HOME PAGE HEADER */
+  #title{
   text-align: center;
   font-size: 4em;
   padding:  300px 280px 25px 350px;
-  font-family: 'Prosto One', cursive;
-  text-shadow:;
-}
+  /* font-family: 'Prosto One', cursive; */
+  /* text-shadow:; */
+} 
 
 
 
 
+/* STYLES THE SCOREBOARD HEADER */
 #scoreboard{
   text-align: center;
   font-size: 4em;
@@ -82,6 +108,7 @@ h1{
 
 
 
+/* STYLES THE SCOREBOARD TABLE (DOES THIS EXIST PRIOR TO POPULATING THROUGH GAME) */
 #topscores{
   text-align: center;
   font-size: 2em;
@@ -90,13 +117,18 @@ h1{
 
 
 
+/* THE MAIN PARAGRAPH ON THE HOME PAGE (CURRENTLY INACTIVE)  */
 main p{
-  text-align: center;
-  margin: 0px 75px 0px 75px;
+  text-align: justify;
+  margin: 0px 350px 0px 350px;
+  font-size: 1.5em;
+  color: black;
+  font-family: 'Press Start 2P', cursive;
 }
 
 
 
+/* STYLES THE NAME INPUT FIELD ON HOME PAGE */
 input[type=text]{
   text-align: center;
   background-color: black;
@@ -106,6 +138,7 @@ input[type=text]{
 
 
 
+/* STYLES THE START GAME BUTTON ON HOMEPAGE */
 button{
   background-color: purple;
   color: white;
@@ -114,18 +147,19 @@ button{
 
 
 
+/* HERO IMAGE ON ABOUT US */
 #hero{
   padding: 100px 75px 30px 170px;
 }
 
 
 
-#headshots li{
+/* #headshots li{
 
-}
+} */
 
 
-
+/* STYLES THE BIO PHOTOS ON ABOUT US */
 .biopic{
   display: inline-block;
   float: left;
@@ -133,6 +167,7 @@ button{
 
 
 
+/* I USED A FOOTER TO CORRECT SPACING ISSUES ACROSS PAGE. MAY WANT TO ADD A BORDER TO SEE WHAT IT DOES. */
 footer{
   margin: 0px 75px 0px 75px;
   text-align: center;
@@ -141,6 +176,8 @@ footer{
 
 
 
+
+/* MAY CONTROL TABLE MARGINS FOR SCOREBOARD */
 table {
   margin-left:auto; 
   margin-right:auto;
@@ -148,6 +185,7 @@ table {
 
 
 
+/* PRESUMABLY STYLES TABLE HEADER */
 th {
   background-color: rgba(155, 155, 155, 0.55);
   padding: 20px;
