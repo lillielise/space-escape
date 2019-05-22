@@ -33,6 +33,7 @@ var glow2 = document.getElementById('glow2');
 var glow3 = document.getElementById('glow3');
 
 var avatar = document.getElementById('avatar');
+var spaceship = document.getElementById('spaceship');
 
 var riddle1 = document.getElementById('riddle1');
 var riddleOneAnswer = document.getElementById('riddleOneQuestion');
@@ -87,17 +88,7 @@ function saveToLocalStorage(){
 }
 
 
-function gameOverDisplay(){
-  getScore();
-  // code block - display 'Game Over' msg
-  gamePage.innerHTML = '';
-  gameOver.style.display = 'block';
-  // link to scoreboard
-  setTimeout(function() {
-    window.location = 'https://lillielise.github.io/space-escape/scoreboard';
-  }, 3000);
 
-}
 
 // TABLE HEADER FUNCTION
 
@@ -173,7 +164,7 @@ function submitRiddleOneHandler(event){
 
 
 
-////////////////////////LOCAL STORAGE FUNCTION////////////
+    ////////////////////////LOCAL STORAGE FUNCTION////////////
 
 
 
@@ -219,6 +210,18 @@ function submitRiddleTwoHandler(event){
   }
 }
 
+
+
+function spaceShipMove (){
+
+  spaceship.style.transform = 'translate(0px, -500px)';
+  spaceship.style.transition = '3s';
+
+  avatar.style.transform = 'translate(-550px, -500px)';
+  avatar.style.transition = '3s';
+
+}
+
 function submitRiddleThreeHandler(event){
   event.preventDefault();
   var riddleThreeAnswerCheck = event.target.riddleThreeAnswer.value;
@@ -230,9 +233,13 @@ function submitRiddleThreeHandler(event){
     shape3.style.display = 'none';
     console.log(points);
 
+
+    avatar.style.transform = 'translate(-700px, -50px)';
+    avatar.style.transition = '2s';
     // YOU WIN Function call
-    getScore();
-    youWinDisplay();
+    // function that moves space ship with delay and screen with delay 
+    setTimeout(spaceShipMove,2000);
+    setTimeout(youWinDisplay, 3000);
 
   } if(userGuesses < 5){
     userGuesses++;
@@ -241,6 +248,7 @@ function submitRiddleThreeHandler(event){
   } if(userGuesses === 5){
     // remove event handler
     riddleOneAnswer.removeEventListener('submit', submitRiddleOneHandler);
+
     // game over msg
     gameOverDisplay();
     // save to LS
@@ -254,6 +262,7 @@ function submitRiddleThreeHandler(event){
 // Total Score Function //
 
 function youWinDisplay(){
+  getScore();
   // Save score to LS
   // Assign score to scoreboard
 
@@ -263,10 +272,23 @@ function youWinDisplay(){
 
   // link to scoreboard.html
   setTimeout(function() {
+    location.href='game.html';
     window.location = 'https://lillielise.github.io/space-escape/scoreboard';
   }, 3000);
 }
 
+
+function gameOverDisplay(){
+  getScore();
+  // code block - display 'Game Over' msg
+  gamePage.innerHTML = '';
+  gameOver.style.display = 'block';
+  // link to scoreboard
+  setTimeout(function() {
+    window.location = 'https://lillielise.github.io/space-escape/scoreboard';
+  }, 3000);
+
+}
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //// EXECUTABLE CODE ////
@@ -285,6 +307,7 @@ function youWinDisplay(){
 
 
 // Shape events listeners: //
+
 
 shapeClick.addEventListener('click',clickHandler);
 
