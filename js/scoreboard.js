@@ -1,8 +1,11 @@
 'use strict';
 
 // Global Variables
+var playersArray = [];
 var namesArray = [];
 var scores = [];
+
+retrieveLocalStorage();
 
 // DOM element
 
@@ -10,20 +13,32 @@ var scoresTable = document.getElementById('high-scores');
 
 // FUNCTIONS
  
-function getNamesFromLS (){
-  var retrievedPlayers = localStorage.getItem('players');
-  var parsedPlayers = JSON.parse(retrievedPlayers);
+// Retrieve Names and Scores from LS:
 
-  console.log(parsedPlayers);
-
+function retrieveLocalStorage(){
+  if (localStorage.players){
+    var unparsedPlayers = localStorage.getItem('players');
+    var parsedPlayers = JSON.parse(unparsedPlayers);
+    playersArray = parsedPlayers;
+    console.log('this is the parsedPlayers' + parsedPlayers);
+  }
 }
 
+// function getNamesFromLS (){
+//   var retrievedPlayers = localStorage.getItem('players');
+//   var parsedPlayers = JSON.parse(retrievedPlayers);
 
-function getScoresFromLS (){
-  var retrievedScores = localStorage.getItem('scores');
-  var parsedScores = JSON.parse(retrievedScores);
-  scores = parsedScores;
-}
+//   console.log(parsedPlayers);
+
+// }
+
+
+// function getScoresFromLS (){
+//   var retrievedScores = localStorage.getItem('scores');
+//   var parsedScores = JSON.parse(retrievedScores);
+//   scores = parsedScores;
+// }
+
 // TABLE HEADER FUNCTION
 
 function makeHeaderRow(){
@@ -31,12 +46,12 @@ function makeHeaderRow(){
   var trEl = document.createElement('tr');
 
   // create, content, append Name cell
-  var thEl = document.createElement('td');
+  var thEl = document.createElement('th');
   thEl.textContent = 'Name';
   trEl.appendChild(thEl);
 
   // create, content, append Score cell
-  thEl = document.createElement('td');
+  thEl = document.createElement('th');
   thEl.textContent = 'Score';
   trEl.appendChild(thEl);
 
@@ -46,28 +61,33 @@ function makeHeaderRow(){
 
 function makeDataRow(){
   // create the row
-  var trEl = document.createElement('tr');
+  // var trEl = document.createElement('tr');
 
-  for (var i = 0; i < scores.length; i++){
   // create, content, append first cell
+  for (var i = 0; i < playersArray.length; i++){
+    var trEl = document.createElement('tr');
+
     var tdEL = document.createElement('td');
-    tdEL.textContent = namesArray[i];
+    tdEL.textContent = playersArray[i].userName;
     trEl.appendChild(tdEL);
 
+    tdEL = document.createElement('td');
+    tdEL.textContent = playersArray[i].points;
+    trEl.appendChild(tdEL);
 
-    // create, content, append first cell
-    var tdTwoEL = document.createElement('td');
-    tdTwoEL.textContent = scores[i];
-    trEl.appendChild(tdTwoEL);
-
-    // append the row to the table
-    // scoresTable.appendChild(trEl);
+    scoresTable.appendChild(trEl);
   }
-  scoresTable.appendChild(trEl);
+
+  // create, content, append first cell
+  // for (var j = 0; j < playersArray.length; j++){
+  //   tdEL = document.createElement('td');
+  //   tdEL.textContent = playersArray[j].points;
+  //   trEl.appendChild(tdEL);
+  // }
+
+  // append the row to the table
 }
 
-getScoresFromLS();
-getNamesFromLS();
 makeHeaderRow();
 makeDataRow();
 
