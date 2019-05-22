@@ -1,7 +1,7 @@
 'use strict';
 
 // var username = document.getElementById('name').value;
-var allPlayer = [];
+var playersArray = [];
 var startButton = document.getElementById('start');
 // var highScores = document.getElementById('highscores');
 // Player constructor
@@ -11,9 +11,9 @@ function retrieveLocalStorage (){
   if (localStorage.players){
     var unparsedPlayers = localStorage.getItem('players');
     var parsedPlayers = JSON.parse(unparsedPlayers);
-    allPlayer = parsedPlayers;
+    playersArray = parsedPlayers;
     console.log(parsedPlayers);
-  // console.log(allPlayer);
+    console.log(playersArray);
   }
 }
 
@@ -21,8 +21,8 @@ retrieveLocalStorage();
 
 function Player(userName){
   this.userName = userName;
-  this.score = 0;
-  allPlayer.push(this);
+  this.points = 0;
+  playersArray.unshift(this);
 }
 
 function getUserName(e) {
@@ -31,17 +31,13 @@ function getUserName(e) {
   new Player(nameField);
 
   // save to LS
-  var stringifyNames = JSON.stringify(allPlayer);
+  var stringifyNames = JSON.stringify(playersArray);
   console.log('this is my stringify names', stringifyNames);
   localStorage.setItem('players', stringifyNames);
 
 
-
-
-
   // var playerName = document.getElementById('start');
   console.log(nameField);
-  console.log(namesArray);
 }
 
 startButton.addEventListener('submit', getUserName);

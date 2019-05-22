@@ -5,11 +5,11 @@
 
 // Global Varriables //
 
-var scores = [];
+var playersArray = [];
 var points = 0;
 var userGuesses = 0;
 
-// var hasWon = false;
+retrieveLocalStorage();
 
 // DOM
 
@@ -74,20 +74,20 @@ var gameOver = document.getElementById('game-over');
 
 // Helper Functions //
 
-function getScore() {
+// function getScore() {
 
-  scores.push(points);
-  saveToLocalStorage();
-  console.log(scores);
-}
+//   scores.push(points);
+//   saveToLocalStorage();
+//   console.log(scores);
+// }
 
-function saveToLocalStorage(){
-  var stringifyScore = JSON.stringify(scores);
-  console.log('this is my stringify score', stringifyScore);
-  localStorage.setItem('scores', stringifyScore);
+// function saveToLocalStorage(){
+//   var stringifyScore = JSON.stringify(scores);
+//   console.log('this is my stringify score', stringifyScore);
+//   localStorage.setItem('scores', stringifyScore);
   
   
-}
+// }
 
 
 
@@ -161,25 +161,9 @@ function submitRiddleOneHandler(event){
     // remove event handler
     riddleOneAnswer.removeEventListener('submit', submitRiddleOneHandler);
     // game over msg
+
     // save to LS
 
-
-
-
-    ////////////////////////LOCAL STORAGE FUNCTION////////////
-
-
-
-    // function saveToLocalStorage(){
-    //   var stringifyNames = JSON.stringify(namesArray);
-    //   console.log("this is my stringify names", stringifyNames);
-    //   localStorage.setItem('players', stringifyNames);
-    //  }
-    //  if(localStorage.getItem('players')){
-    //   var retrievedPlayers = localStorage.getItem('players');
-    //   var parsedPlayers = JSON.parse(retrievedPlayers);
-    //   namesArray = parsedPlayers;
-    //  }
     gameOverDisplay();
   }
 
@@ -207,7 +191,7 @@ function submitRiddleTwoHandler(event){
     riddleOneAnswer.removeEventListener('submit', submitRiddleOneHandler);
     // game over msg
     gameOverDisplay();
-    console.log(scores);
+
     // save to LS
 
   }
@@ -262,11 +246,51 @@ function submitRiddleThreeHandler(event){
 
 // Handle spaceship click
 
+// LS Functions
+
+// Retrieve Names data from LS:
+
+function retrieveLocalStorage(){
+  if (localStorage.players){
+    var unparsedPlayers = localStorage.getItem('players');
+    var parsedPlayers = JSON.parse(unparsedPlayers);
+    playersArray = parsedPlayers;
+    console.log('this is the parsedPlayers' + parsedPlayers);
+  // console.log(playersArray);
+  }
+}
+
+
+
+// function Player(userName, points){
+//   this.userName = userName;
+//   this.points = points;
+//   playersArray.push(this);
+// }
+
+// Set game score data in the same LS contstructor:
+
+function getUserScore() {
+
+  // playersArray[i].name === playersArray[0].name
+      
+  playersArray[0].points = points;
+
+  // save to LS
+  var stringifyNames = JSON.stringify(playersArray);
+  console.log('this is my stringify names', stringifyNames);
+  localStorage.setItem('players', stringifyNames);
+
+}
+
+
 // Total Score Function //
 
 function youWinDisplay(){
-  getScore();
+  getUserScore();
   // Save score to LS
+
+
   // Assign score to scoreboard
 
   gamePage.innerHTML = '';
@@ -282,7 +306,7 @@ function youWinDisplay(){
 
 
 function gameOverDisplay(){
-  getScore();
+  getUserScore();
   // code block - display 'Game Over' msg
   gamePage.innerHTML = '';
   gameOver.style.display = 'block';
