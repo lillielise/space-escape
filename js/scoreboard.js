@@ -9,14 +9,15 @@ var scores = [];
 var scoresTable = document.getElementById('high-scores');
 
 // FUNCTIONS
-
+ 
 function getNamesFromLS (){
-  if (localStorage.getItem('players')){
-    var retrievedPlayers = localStorage.getItem('players');
-    var parsedPlayers = JSON.parse(retrievedPlayers);
-    namesArray = parsedPlayers;
-  }
+  var retrievedPlayers = localStorage.getItem('players');
+  var parsedPlayers = JSON.parse(retrievedPlayers);
+
+  console.log(parsedPlayers);
+
 }
+
 
 function getScoresFromLS (){
   var retrievedScores = localStorage.getItem('scores');

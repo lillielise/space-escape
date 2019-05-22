@@ -85,6 +85,8 @@ function saveToLocalStorage(){
   var stringifyScore = JSON.stringify(scores);
   console.log('this is my stringify score', stringifyScore);
   localStorage.setItem('scores', stringifyScore);
+  
+  
 }
 
 
