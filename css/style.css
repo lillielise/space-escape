@@ -1,9 +1,40 @@
-header{
-  height: 120px;
-  background-color: grey;
+
+/* THIS IS THE BACKGROUND FOR HOMEPAGE */
+#index{
+  background-image: url('https://www.goodfreephotos.com/albums/astrophotography/great-stars-from-hubble.jpg');
+  height: 100%;
 }
 
 
+
+/* THIS IS THE BACKGROUND FOR SCOREBOARD */
+#scoreboardbody {
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/e3/Magnificent_CME_Erupts_on_the_Sun_-_August_31.jpg');
+}
+
+
+
+/* THIS IS THE BACKGROUND FOR ABOUT US  */
+#aboutteam {
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/7f/The_Carina_Nebula_%28wallpaper%29.jpg');
+}
+
+/* https://images.pexels.com/photos/414834/pexels-photo-414834.jpeg?cs=srgb&dl=colorful-cosmos-crab-nebula-414834.jpg&fm=jpg */
+
+
+body {
+  font-family: 'Bungee Shade';
+}
+
+/* THIS IS THE HEADER PER THE ORIGINAL WIREFRAMES */
+header{
+  height: 120px;
+  /* background-color: grey; */
+}
+
+
+
+/* THIS IS THE POSITIONING OF THE LOGO IMAGE (CURRENTLY NOT IN USE) */
 nav img {
   float: left; 
   margin-top: 10px;
@@ -11,67 +42,175 @@ nav img {
   padding-bottom: 15px;
 }
 
+
+/* THESE A LINKS STYLE THE LINKS AT THE TOP OF THE PAGE */
+a:link{
+  color:purple;
+}
+
+
+
+a:hover{
+  color: greenyellow;
+}
+
+
+
+a:active{
+  color: yellow;
+}
+
+
+
+a:visited{
+  color: white;
+}
+
+a {
+  font-size: 1.5em;
+}
+
+
+
+
+
+/* I HONESTLY DON'T REMEMBER OFF THE TOP OF MY HEAD, BUT ITS GLOBAL SO THERES THAT */
 li {
   display: inline-block;
   margin-left: 150px;
   margin-top: 50px;
   font-size: 1em;
 }
+
+
+
+/* STYLES ALL H1 HEADERS */
 h1{
+    /* text-align: center; */
+  font-size: 5em;
+  padding:  0px 280px 0px 350px; 
+}
+
+
+
+
+/* STYLES THE HOME PAGE HEADER */
+
+
+  #title{
   text-align: center;
-  font-size: 4em;
-  padding:  0px 280px 25px 350px;
+  font-size: 9em;
+  width: 100%;
  
-}
+  padding:  40px;
+  margin-bottom: 30px;
+ 
+} 
 
-#title{
-  text-align: center;
-  font-size: 4em;
-  padding:  300px 280px 25px 350px;
-}
 
+
+
+/* STYLES THE SCOREBOARD HEADER */
 #scoreboard{
   text-align: center;
   font-size: 4em;
   padding:  250px 280px 25px 350px;
 }
 
+
+
+/* STYLES THE SCOREBOARD TABLE (DOES THIS EXIST PRIOR TO POPULATING THROUGH GAME) */
 #topscores{
   text-align: center;
   font-size: 2em;
   padding:  10px 280px 25px 350px
 }
 
+
+
+/* THE MAIN PARAGRAPH ON THE HOME PAGE   */
+
+
 main p{
   text-align: center;
-  margin: 0px 75px 0px 75px;
+  margin: 30px;
+  margin-left: 200px;
+  width: 70%;
+  font-size: 2em;
+  color: black;
+  font-family: 'sans serif';
+  border: 10px black solid;
+  box-shadow: 10px 5px 5px black;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
+
+
+/* STYLES THE NAME INPUT FIELD ON HOME PAGE */
+input[type=text]{
+  text-align: center;
+  font-family: 'Prosto One';
+  padding: 1em;
+  font-size: 1em;
+  background-color: black;
+  outline: 3px solid black;
+}
+
+
+
+/* STYLES THE START GAME BUTTON ON HOMEPAGE */
+button{
+  background-color: rgb(94, 17, 94);
+  font-family: 'Prosto One';
+  padding: .5em;
+  font-size: 1em;
+  color: white;
+  margin-top: 10px;
+}
+
+
+
+/* HERO IMAGE ON ABOUT US */
 #hero{
   padding: 100px 75px 30px 170px;
 }
 
-#headshots li{
 
-}
+
+/* #headshots li{
+
+} */
+
+
+/* STYLES THE BIO PHOTOS ON ABOUT US */
 .biopic{
   display: inline-block;
   float: left;
+}
 
-}footer{
+
+
+/* I USED A FOOTER TO CORRECT SPACING ISSUES ACROSS PAGE. MAY WANT TO ADD A BORDER TO SEE WHAT IT DOES. */
+footer{
   margin: 0px 75px 0px 75px;
   text-align: center;
   padding: 10px 75px 10px 75px;
 }
 
 
-/* Scoreboard */
 
+
+/* MAY CONTROL TABLE MARGINS FOR SCOREBOARD */
 table {
   margin-left:auto; 
   margin-right:auto;
+  letter-spacing: 1px;
 }
 
+
+
+/* PRESUMABLY STYLES TABLE HEADER */
 th {
   background-color: rgba(155, 155, 155, 0.55);
   padding: 20px;
@@ -79,3 +218,12 @@ th {
   font-weight: bold;
   border: 1px solid black;
 }
+
+td {
+  background-color: rgba(155, 155, 155, 0.55);
+  font-size: 20px;
+  padding: 20px;
+  border: 1px solid black;
+
+}
+
