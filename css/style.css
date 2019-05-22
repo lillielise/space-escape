@@ -22,7 +22,9 @@
 /* https://images.pexels.com/photos/414834/pexels-photo-414834.jpeg?cs=srgb&dl=colorful-cosmos-crab-nebula-414834.jpg&fm=jpg */
 
 
-
+body {
+  font-family: 'Bungee Shade';
+}
 
 /* THIS IS THE HEADER PER THE ORIGINAL WIREFRAMES */
 header{
@@ -64,6 +66,12 @@ a:visited{
   color: white;
 }
 
+a {
+  font-size: 1.5em;
+}
+
+
+
 
 
 /* I HONESTLY DON'T REMEMBER OFF THE TOP OF MY HEAD, BUT ITS GLOBAL SO THERES THAT */
@@ -81,19 +89,22 @@ h1{
     /* text-align: center; */
   font-size: 5em;
   padding:  0px 280px 0px 350px; 
-  font-family: 'Prosto One', cursive;
 }
 
 
 
 
 /* STYLES THE HOME PAGE HEADER */
+
+
   #title{
   text-align: center;
-  font-size: 4em;
-  padding:  300px 280px 25px 350px;
-  /* font-family: 'Prosto One', cursive; */
-  /* text-shadow:; */
+  font-size: 9em;
+  width: 100%;
+ 
+  padding:  40px;
+  margin-bottom: 30px;
+ 
 } 
 
 
@@ -117,13 +128,21 @@ h1{
 
 
 
-/* THE MAIN PARAGRAPH ON THE HOME PAGE (CURRENTLY INACTIVE)  */
+/* THE MAIN PARAGRAPH ON THE HOME PAGE   */
+
+
 main p{
-  text-align: justify;
-  margin: 0px 350px 0px 350px;
-  font-size: 1.5em;
+  text-align: center;
+  margin: 30px;
+  margin-left: 200px;
+  width: 70%;
+  font-size: 2em;
   color: black;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'sans serif';
+  border: 10px black solid;
+  box-shadow: 10px 5px 5px black;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 
@@ -131,16 +150,21 @@ main p{
 /* STYLES THE NAME INPUT FIELD ON HOME PAGE */
 input[type=text]{
   text-align: center;
+  font-family: 'Prosto One';
+  padding: 1em;
+  font-size: 1em;
   background-color: black;
-  color: white;
-  outline: 3px solid purple;
+  outline: 3px solid black;
 }
 
 
 
 /* STYLES THE START GAME BUTTON ON HOMEPAGE */
 button{
-  background-color: purple;
+  background-color: rgb(94, 17, 94);
+  font-family: 'Prosto One';
+  padding: .5em;
+  font-size: 1em;
   color: white;
   margin-top: 10px;
 }
