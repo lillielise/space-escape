@@ -5,6 +5,7 @@
 
 // Global Varriables //
 
+var scores = [];
 var points = 0;
 var userGuesses = 0;
 
@@ -49,7 +50,7 @@ var gameOver = document.getElementById('game-over');
 
 // Scoreboard Table
 
-var scoresTable = document.getElementById('high-scores');
+// var scoresTable = document.getElementById('high-scores');
 
 // Local Storage //
 
@@ -72,7 +73,22 @@ var scoresTable = document.getElementById('high-scores');
 
 // Helper Functions //
 
+function getScore() {
+
+  scores.push(points);
+  saveToLocalStorage();
+  console.log(scores);
+}
+
+function saveToLocalStorage(){
+  var stringifyScore = JSON.stringify(scores);
+  console.log('this is my stringify score', stringifyScore);
+  localStorage.setItem('scores', stringifyScore);
+}
+
+
 function gameOverDisplay(){
+  getScore();
   // code block - display 'Game Over' msg
   gamePage.innerHTML = '';
   gameOver.style.display = 'block';
@@ -85,25 +101,7 @@ function gameOverDisplay(){
 
 // TABLE HEADER FUNCTION
 
-// function makeHeaderRow(){
-//   // create the row
-//   var trEl = document.createElement('tr');
 
-//   // create, content, append Name cell
-//   var thEl = document.createElement('th');
-//   thEl.textContent = 'Name';
-//   trEl.appendChild(thEl);
-
-//   // create, content, append Score cell
-//   thEl = document.createElement('th');
-//   thEl.textContent = 'Score';
-//   trEl.appendChild(thEl);
-  
-//   // append the row to the table
-//   scoresTable.appendChild(trEl);
-// }
-
-// makeHeaderRow();
 
 // Event Handlers //
 
@@ -233,6 +231,7 @@ function submitRiddleThreeHandler(event){
     console.log(points);
 
     // YOU WIN Function call
+    getScore();
     youWinDisplay();
 
   } if(userGuesses < 5){
@@ -275,6 +274,8 @@ function youWinDisplay(){
 // Anything that runs on page load //
 
 // Function Calls //
+
+// saveToLocalStorage();
 
 
 
