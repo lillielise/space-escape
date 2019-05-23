@@ -9,6 +9,7 @@ var playersArray = [];
 var points = 0;
 var userGuesses = 0;
 
+
 retrieveLocalStorage();
 
 // DOM
@@ -85,8 +86,8 @@ var gameOver = document.getElementById('game-over');
 //   var stringifyScore = JSON.stringify(scores);
 //   console.log('this is my stringify score', stringifyScore);
 //   localStorage.setItem('scores', stringifyScore);
-  
-  
+
+
 // }
 
 
@@ -141,8 +142,7 @@ function clickHandler(event){
 
 function submitRiddleOneHandler(event){
   event.preventDefault();
-
-  var riddleOneAnswerCheck = event.target.riddleOneAnswer.value;
+  var riddleOneAnswerCheck = event.target.riddleOneAnswer.value.toLowerCase();
   if (riddleOneAnswerCheck === 'stars'){
     points += 5;
     star.style.display = 'inline';
@@ -171,7 +171,7 @@ function submitRiddleOneHandler(event){
 
 function submitRiddleTwoHandler(event){
   event.preventDefault();
-  var riddleTwoAnswerCheck = event.target.riddleTwoAnswer.value;
+  var riddleTwoAnswerCheck = event.target.riddleTwoAnswer.value.toLowerCase();
   if (riddleTwoAnswerCheck === 'mercury'){
     points += 5;
     star2.style.display = 'inline';
@@ -211,8 +211,8 @@ function spaceShipMove (){
 
 function submitRiddleThreeHandler(event){
   event.preventDefault();
-  var riddleThreeAnswerCheck = event.target.riddleThreeAnswer.value;
-  if (riddleThreeAnswerCheck === 'footsteps'){
+  var riddleThreeAnswerCheck = event.target.riddleThreeAnswer.value.toLowerCase();
+  if (riddleThreeAnswerCheck === 'footsteps' || riddleThreeAnswerCheck === 'footprints'){
     points += 5;
     star3.style.display = 'inline';
     riddle3.style.display = 'none';
@@ -224,7 +224,7 @@ function submitRiddleThreeHandler(event){
     avatar.style.transform = 'translate(-700px, -50px)';
     avatar.style.transition = '2s';
     // YOU WIN Function call
-    // function that moves space ship with delay and screen with delay 
+    // function that moves space ship with delay and screen with delay
     setTimeout(spaceShipMove,2000);
     setTimeout(youWinDisplay, 3000);
 
@@ -273,7 +273,7 @@ function retrieveLocalStorage(){
 function getUserScore() {
 
   // playersArray[i].name === playersArray[0].name
-      
+
   playersArray[0].points = points;
 
   // save to LS
@@ -297,7 +297,7 @@ function youWinDisplay(){
   youWin.style.display = 'block';
 
 
- 
+
   setTimeout(function() {
     location.href='game.html';
     window.location = 'https://lillielise.github.io/space-escape/scoreboard.html';
@@ -310,7 +310,7 @@ function gameOverDisplay(){
   // code block - display 'Game Over' msg
   gamePage.innerHTML = '';
   gameOver.style.display = 'block';
-  
+
   setTimeout(function() {
     window.location = 'https://lillielise.github.io/space-escape/scoreboard.html';
   }, 3000);
