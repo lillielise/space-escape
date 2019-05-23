@@ -19,9 +19,9 @@ retrieveLocalStorage();
 var shapeClick = document.getElementById('shape-click');
 var gamePage = document.getElementById('game-page');
 
-var shape1 = document.getElementById('shape1');
-var shape2 = document.getElementById('shape2');
-var shape3 = document.getElementById('shape3');
+var alien1 = document.getElementById('alien1');
+var alien2 = document.getElementById('alien2');
+var alien3 = document.getElementById('alien3');
 
 // Footer Shapes
 var star = document.getElementById('star');
@@ -103,32 +103,32 @@ var gameOver = document.getElementById('game-over');
 // Shape events handlers //
 
 function clickHandler(event){
-  if(event.target.id === 'shape1'){
+  if(event.target.id === 'alien1'){
 
     riddle1.style.display = 'block';
     riddle2.style.display = 'none';
     riddle3.style.display = 'none';
 
 
-    //  move avatar to shape
+    //  move avatar to alien
     avatar.style.transform = 'translate(-400px, -240px)';
     avatar.style.transition = '1s';
 
-  } if(event.target.id === 'shape2' && glow2.style.display === 'block'){
+  } if(event.target.id === 'alien2' && glow2.style.display === 'block'){
     riddle1.style.display = 'none';
     riddle2.style.display = 'block';
     riddle3.style.display = 'none';
 
-    //  move avatar to shape
+    //  move avatar to alien
     avatar.style.transform = 'translate(-90px, -280px)';
     avatar.style.transition = '1s';
 
-  } if(event.target.id === 'shape3' && glow3.style.display === 'block'){
+  } if(event.target.id === 'alien3' && glow3.style.display === 'block'){
     riddle1.style.display = 'none';
     riddle2.style.display = 'none';
     riddle3.style.display = 'block';
 
-    //  move avatar to shape
+    //  move avatar to alien
     avatar.style.transform = 'translate(190px, -230px)';
     avatar.style.transition = '2s';
   }
@@ -149,7 +149,7 @@ function submitRiddleOneHandler(event){
     riddle1.style.display = 'none';
     glow1.style.display = 'none';
     glow2.style.display = 'block';
-    shape1.style.display = 'none';
+    alien1.style.display = 'none';
 
     console.log(points);
 
@@ -178,7 +178,7 @@ function submitRiddleTwoHandler(event){
     riddle2.style.display = 'none';
     glow2.style.display = 'none';
     glow3.style.display = 'block';
-    shape2.style.display = 'none';
+    alien2.style.display = 'none';
 
     console.log(points);
 
@@ -217,7 +217,7 @@ function submitRiddleThreeHandler(event){
     star3.style.display = 'inline';
     riddle3.style.display = 'none';
     glow3.style.display = 'none';
-    shape3.style.display = 'none';
+    alien3.style.display = 'none';
     console.log(points);
 
 
@@ -333,7 +333,7 @@ function gameOverDisplay(){
 // 'Start Game' button event listener
 
 
-// Shape events listeners: //
+// Alien events listeners: //
 
 
 shapeClick.addEventListener('click',clickHandler);

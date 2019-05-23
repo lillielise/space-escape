@@ -1,25 +1,14 @@
-/* Header */
+/* Body  */
 
 body {
   background-image: url('../img/milky-way-2675322_1920.jpg');
   height: 100%;
   max-width: 1350px;
+  color: white;
   
 }
 
-#game-container {
- color: white;
-}
-
-a {
-  font-size: 35px;
-  text-align: left;
-  font-family: 'Bungee Shade', cursive;
-  color: white;
-} 
-
-
-/* Game Time */
+/* Header */
 
 #header {
   background-color: black;
@@ -29,10 +18,29 @@ a {
   padding: 50px;
 }
 
-.star {
- display: none;
- margin-left: 60px;
+a {
+  font-size: 35px;
+  text-align: left;
+  font-family: 'Bungee Shade', cursive;
+  color: white;
 } 
+
+.star {
+  display: none;
+  margin-left: 60px;
+ } 
+
+
+/* Game Avatar and Spaceship */
+
+
+#spaceship {
+  z-index: 2;
+  height: 500px;
+  position: absolute;
+  margin-left: 50px;
+  margin-top: 200px;
+}
 
 
 
@@ -44,48 +52,33 @@ a {
   margin-left: 800px;
 }
 
+/* Shape styling */
 
-
-
-
-@keyframes spin {
-  100% {
-    transform: rotate(360deg);
-  }
+.alien {
+  z-index: 2;
+  position: absolute;
 }
 
-.spin {
-  animation: spin 1s infinite;
-  animation-timing-function: linear;
+#alien1 {
+  height: 150px;
+  margin-top: 200px;
+  margin-left: 500px;
+
 }
 
-@keyframes wiggle {
-  10%,
-  30% {
-    transform: translate3d(-13px, 0, 50px);
-    opacity:1;
-
-    
-  }
-  30%,
-  70% {
-    transform: translate3d(16px, -500px, -200px);
-    opacity: .5;
-  }
-  90% {
-    opacity: 0;
-    display: none;
-  }
-  100% {
-    opacity: 0;
-    display: none;
-  }
+#alien2 {
+  height: 150px;
+  margin-top: 150px;
+  margin-left: 900px;
+  
 }
 
-.wiggle {
-  animation: wiggle 5s;
-  display: none;
+#alien3 {
+  height: 100px;
+  margin-top: 350px;
+  margin-left: 1300px;
 }
+
 
 /* Glow styling */
 
@@ -123,33 +116,6 @@ margin-left: 570px;
   }
 
 
-/* Shape styling */
-
-#shape1 {
-  z-index: 2;
-  height: 150px;
-  position: absolute;
-  margin-top: 200px;
-  margin-left: 500px;
-
-}
-
-#shape2 {
-  z-index: 2;
-  height: 150px;
-  position: absolute;
-  margin-top: 150px;
-  margin-left: 900px;
-  
-}
-
-#shape3 {
-  z-index: 2;
-  position: absolute;
-  height: 100px;
-  margin-top: 350px;
-  margin-left: 1300px;
-}
 
 /* Riddle Divs */
 
@@ -187,16 +153,7 @@ margin-left: 570px;
 
 
 
-#spaceship {
-  z-index: 2;
-  height: 500px;
-  position: absolute;
-  margin-left: 50px;
-  margin-top: 200px;
-}
-
-
-/* Win/Lose MSG */
+/* Win and Lose Message */
 
 #you-win {
   display: none;
