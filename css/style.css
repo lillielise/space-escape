@@ -173,6 +173,11 @@ td {
 
 div img {
   margin-left: 20px;
+  
+}
+
+#middlepic {
+  width: 200px;
 }
 
 div h2 {

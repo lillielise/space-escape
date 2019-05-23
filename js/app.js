@@ -143,6 +143,7 @@ function clickHandler(event){
 function submitRiddleOneHandler(event){
   event.preventDefault();
   var riddleOneAnswerCheck = event.target.riddleOneAnswer.value.toLowerCase();
+  event.target.riddleOneAnswer.value = null;
   if (riddleOneAnswerCheck === 'stars'){
     points += 5;
     star.style.display = 'inline';
@@ -172,6 +173,7 @@ function submitRiddleOneHandler(event){
 function submitRiddleTwoHandler(event){
   event.preventDefault();
   var riddleTwoAnswerCheck = event.target.riddleTwoAnswer.value.toLowerCase();
+  event.target.riddleTwoAnswer.value = null;
   if (riddleTwoAnswerCheck === 'mercury'){
     points += 5;
     star2.style.display = 'inline';
@@ -212,7 +214,8 @@ function spaceShipMove (){
 function submitRiddleThreeHandler(event){
   event.preventDefault();
   var riddleThreeAnswerCheck = event.target.riddleThreeAnswer.value.toLowerCase();
-  if (riddleThreeAnswerCheck === 'footsteps' || riddleThreeAnswerCheck === 'footprints'){
+  event.target.riddleThreeAnswer.value = null;
+  if (riddleThreeAnswerCheck ==='footsteps' || riddleThreeAnswerCheck === 'footprints'){
     points += 5;
     star3.style.display = 'inline';
     riddle3.style.display = 'none';
