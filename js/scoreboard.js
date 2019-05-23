@@ -47,12 +47,12 @@ function makeHeaderRow(){
 
   // create, content, append Name cell
   var thEl = document.createElement('th');
-  thEl.textContent = 'Name';
+  thEl.textContent = 'NAME';
   trEl.appendChild(thEl);
 
   // create, content, append Score cell
   thEl = document.createElement('th');
-  thEl.textContent = 'Score';
+  thEl.textContent = 'SCORE';
   trEl.appendChild(thEl);
 
   // append the row to the table
