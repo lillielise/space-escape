@@ -172,5 +172,25 @@ margin-left: 570px;
  }
 
 
+ /* Random Riddle */
+
+ #random-num1 {
+   color:red;
+   font-size: 100px;
+   margin: 400px;
+ }
+
+ #random-num2 {
+  color:green;
+  font-size: 100px;
+  margin: 400px;
+}
+
+#random-num3 {
+  color:blueviolet;
+  font-size: 100px;
+  margin: 400px;
+}
+
 
 
