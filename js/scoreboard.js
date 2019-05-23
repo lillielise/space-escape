@@ -12,7 +12,7 @@ retrieveLocalStorage();
 var scoresTable = document.getElementById('high-scores');
 
 // FUNCTIONS
- 
+
 // Retrieve Names and Scores from LS:
 
 function retrieveLocalStorage(){
@@ -20,7 +20,7 @@ function retrieveLocalStorage(){
     var unparsedPlayers = localStorage.getItem('players');
     var parsedPlayers = JSON.parse(unparsedPlayers);
     playersArray = parsedPlayers;
-    console.log('this is the parsedPlayers' + parsedPlayers);
+    // console.log('this is the parsedPlayers' + parsedPlayers);
   }
 }
 
@@ -47,12 +47,12 @@ function makeHeaderRow(){
 
   // create, content, append Name cell
   var thEl = document.createElement('th');
-  thEl.textContent = 'Name';
+  thEl.textContent = 'NAME';
   trEl.appendChild(thEl);
 
   // create, content, append Score cell
   thEl = document.createElement('th');
-  thEl.textContent = 'Score';
+  thEl.textContent = 'SCORE';
   trEl.appendChild(thEl);
 
   // append the row to the table
@@ -77,17 +77,80 @@ function makeDataRow(){
 
     scoresTable.appendChild(trEl);
   }
-
-  // create, content, append first cell
-  // for (var j = 0; j < playersArray.length; j++){
-  //   tdEL = document.createElement('td');
-  //   tdEL.textContent = playersArray[j].points;
-  //   trEl.appendChild(tdEL);
-  // }
-
-  // append the row to the table
 }
+
+
+// create, content, append first cell
+// for (var j = 0; j < playersArray.length; j++){
+//   tdEL = document.createElement('td');
+//   tdEL.textContent = playersArray[j].points;
+//   trEl.appendChild(tdEL);
+// }
+
+// append the row to the table
+
+
+function playerSort(){
+  playersArray.sort(function(a,b){
+    return b.points - a.points;
+  });
+}
+
+
+console.log('unsorted', playersArray);
+playerSort();
+console.log('sorted', playersArray);
 
 makeHeaderRow();
 makeDataRow();
 
+// function Person(firstName, lastName, age) {
+//   this.firstName = firstName;
+//   this.lastName = lastName;
+//   this.age = age;
+// }
+
+// const people = [
+//   new Person('Wes', 'Washington', 25),
+//   new Person('Casey', 'Codefellow', 38),
+//   new Person('Stan', 'Seattle', 67),
+// ];
+
+// const sortPeople = (arr) => {
+//   arr.sort(function(a, b) {
+//     return a.lastName > b.lastName;
+//   });
+//   return arr;
+
+// };
+
+
+
+// function playerSort(array){
+//   array.sort(function(a,b){
+//     return a.points < b.points;
+//   });
+//   return array;
+// }
+
+
+// var sortedPlayersArray = [];
+
+// function sortPlayers(){
+//   for(var i = 0; i < playersArray.length; i++){
+//     if (playersArray[i].points === 15){
+//       sortedPlayersArray.push(playersArray[i]);
+//     }
+//     if (playersArray[i].points === 10){
+//       sortedPlayersArray.push(playersArray[i]);
+//     }
+//     if (playersArray[i].points === 5){
+//       sortedPlayersArray.push(playersArray[i]);
+//     }
+//     if (playersArray[i].points === 0){
+//       sortedPlayersArray.push(playersArray[i]);
+//     }
+//   }
+
+// }
+// sortPlayers();

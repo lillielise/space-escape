@@ -8,27 +8,49 @@
     <link href="https://fonts.googleapis.com/css?family=Bungee+Shade&display=swap" rel="stylesheet">
   </head>
 
+  <!-- Header -->
   <header>
     <title>Space Escape</title>
-
   </header>
 
   <body>
   
   <section id = "game-page">
 
-    <section id = "game-container">
 
-    <!-- Create shapes  -->
+
+        <div id = "header">
+            <a href="https://lillielise.github.io/space-escape/">home</a>
+            <img class = "star" id = "star" src = "https://img.icons8.com/ultraviolet/40/000000/crystal.png">
+            <img class = "star" id = "star2" src = "https://img.icons8.com/ultraviolet/40/000000/crystal.png">
+            <img class = "star" id = "star3" src = "https://img.icons8.com/ultraviolet/40/000000/crystal.png">
+          </div>
+        
+    
+    <!-- Avatar -->
+    <img id = "avatar" src= "img/kisspng-astronaut-outer-space-euclidean-vector-astronaut-vector-material-5a79a47ee78d85.4084692815179214069485.png">
+
+    <!-- Rocketship -->
+    <img id = "spaceship" src= "img/Spaceship-PNG-Image.png">
+    </section>
+
+    <!-- Create Aliens  -->
     <section id ="shape-click">
-      <img id = "shape1" src= "https://img.icons8.com/ultraviolet/40/000000/crystal.png">
+    
+
+      <img class = "alien" id = "alien1" src = "img/58PIC5k58PIC2c50uBm1ZQmeE_PIC2018.png">
       <div class = "glow" id = "glow1"></div>
+  
 
-      <img id = "shape2" src= "https://img.icons8.com/ultraviolet/40/000000/crystal.png">
+    
+      <img class = "alien" id = "alien2" src= "img/da4a1057dc9dd568046dd2794fc160f7.png">
       <div class = "glow" id = "glow2"></div>
+    
 
-      <img id = "shape3" src= "https://img.icons8.com/ultraviolet/40/000000/crystal.png">
+      <img class = "alien" id = "alien3" src= "img/03188ab5476dcf1118e952c63ae12926.png">
       <div class = "glow" id = "glow3"></div>
+
+    <!-- Riddles -->
 
       <div class = "riddle" id = "riddle1">
         <label for = "riddleOneAnswer">At night they come without being fetched,
@@ -58,29 +80,10 @@
           <button type = "submit">Submit!</button>  
         </form>
       </div>
-
+    
     </section>
     
-    
-    <!-- Avatar -->
-    <img id = "avatar" src= "img/kisspng-astronaut-outer-space-euclidean-vector-astronaut-vector-material-5a79a47ee78d85.4084692815179214069485.png">
 
-    <!-- Rocketship -->
-    <img id = "spaceship" src= "img/Spaceship-PNG-Image.png">
-    </section>
-
-
-
-  
-    <!-- <section id="footer-shape-click"> -->
-        <div id = "footer">
-          <img class = "star" id = "star" src= "https://img.icons8.com/color/48/000000/star.png">
-          <img class = "star" id = "star2" src= "https://img.icons8.com/color/48/000000/star.png">
-          <img class = "star" id = "star3" src= "https://img.icons8.com/color/48/000000/star.png">
-        </div>
-      <!-- </section> -->
-
-    </section>
 
   <!-- Win/Lose  -->
   <section id = "end-game-msg">
@@ -88,8 +91,7 @@
     <div id = "game-over">Game over!</div>
   </section>
     
-      <div id = "game-over">You lose!</div>
-    </section>
+   
     
     <script src = "js/app.js"></script>
   </body>

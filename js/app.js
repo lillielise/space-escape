@@ -9,6 +9,7 @@ var playersArray = [];
 var points = 0;
 var userGuesses = 0;
 
+
 retrieveLocalStorage();
 
 // DOM
@@ -19,9 +20,9 @@ retrieveLocalStorage();
 var shapeClick = document.getElementById('shape-click');
 var gamePage = document.getElementById('game-page');
 
-var shape1 = document.getElementById('shape1');
-var shape2 = document.getElementById('shape2');
-var shape3 = document.getElementById('shape3');
+var alien1 = document.getElementById('alien1');
+var alien2 = document.getElementById('alien2');
+var alien3 = document.getElementById('alien3');
 
 // Footer Shapes
 var star = document.getElementById('star');
@@ -85,8 +86,8 @@ var gameOver = document.getElementById('game-over');
 //   var stringifyScore = JSON.stringify(scores);
 //   console.log('this is my stringify score', stringifyScore);
 //   localStorage.setItem('scores', stringifyScore);
-  
-  
+
+
 // }
 
 
@@ -103,32 +104,32 @@ var gameOver = document.getElementById('game-over');
 // Shape events handlers //
 
 function clickHandler(event){
-  if(event.target.id === 'shape1'){
+  if(event.target.id === 'alien1'){
 
     riddle1.style.display = 'block';
     riddle2.style.display = 'none';
     riddle3.style.display = 'none';
 
 
-    //  move avatar to shape
+    //  move avatar to alien
     avatar.style.transform = 'translate(-400px, -240px)';
     avatar.style.transition = '1s';
 
-  } if(event.target.id === 'shape2' && glow2.style.display === 'block'){
+  } if(event.target.id === 'alien2' && glow2.style.display === 'block'){
     riddle1.style.display = 'none';
     riddle2.style.display = 'block';
     riddle3.style.display = 'none';
 
-    //  move avatar to shape
+    //  move avatar to alien
     avatar.style.transform = 'translate(-90px, -280px)';
     avatar.style.transition = '1s';
 
-  } if(event.target.id === 'shape3' && glow3.style.display === 'block'){
+  } if(event.target.id === 'alien3' && glow3.style.display === 'block'){
     riddle1.style.display = 'none';
     riddle2.style.display = 'none';
     riddle3.style.display = 'block';
 
-    //  move avatar to shape
+    //  move avatar to alien
     avatar.style.transform = 'translate(190px, -230px)';
     avatar.style.transition = '2s';
   }
@@ -141,15 +142,14 @@ function clickHandler(event){
 
 function submitRiddleOneHandler(event){
   event.preventDefault();
-
-  var riddleOneAnswerCheck = event.target.riddleOneAnswer.value;
+  var riddleOneAnswerCheck = event.target.riddleOneAnswer.value.toLowerCase();
   if (riddleOneAnswerCheck === 'stars'){
     points += 5;
     star.style.display = 'inline';
     riddle1.style.display = 'none';
     glow1.style.display = 'none';
     glow2.style.display = 'block';
-    shape1.style.display = 'none';
+    alien1.style.display = 'none';
 
     console.log(points);
 
@@ -171,14 +171,14 @@ function submitRiddleOneHandler(event){
 
 function submitRiddleTwoHandler(event){
   event.preventDefault();
-  var riddleTwoAnswerCheck = event.target.riddleTwoAnswer.value;
+  var riddleTwoAnswerCheck = event.target.riddleTwoAnswer.value.toLowerCase();
   if (riddleTwoAnswerCheck === 'mercury'){
     points += 5;
     star2.style.display = 'inline';
     riddle2.style.display = 'none';
     glow2.style.display = 'none';
     glow3.style.display = 'block';
-    shape2.style.display = 'none';
+    alien2.style.display = 'none';
 
     console.log(points);
 
@@ -211,20 +211,20 @@ function spaceShipMove (){
 
 function submitRiddleThreeHandler(event){
   event.preventDefault();
-  var riddleThreeAnswerCheck = event.target.riddleThreeAnswer.value;
-  if (riddleThreeAnswerCheck === 'footsteps'){
+  var riddleThreeAnswerCheck = event.target.riddleThreeAnswer.value.toLowerCase();
+  if (riddleThreeAnswerCheck === 'footsteps' || riddleThreeAnswerCheck === 'footprints'){
     points += 5;
     star3.style.display = 'inline';
     riddle3.style.display = 'none';
     glow3.style.display = 'none';
-    shape3.style.display = 'none';
+    alien3.style.display = 'none';
     console.log(points);
 
 
     avatar.style.transform = 'translate(-700px, -50px)';
     avatar.style.transition = '2s';
     // YOU WIN Function call
-    // function that moves space ship with delay and screen with delay 
+    // function that moves space ship with delay and screen with delay
     setTimeout(spaceShipMove,2000);
     setTimeout(youWinDisplay, 3000);
 
@@ -273,7 +273,7 @@ function retrieveLocalStorage(){
 function getUserScore() {
 
   // playersArray[i].name === playersArray[0].name
-      
+
   playersArray[0].points = points;
 
   // save to LS
@@ -297,7 +297,7 @@ function youWinDisplay(){
   youWin.style.display = 'block';
 
 
- 
+
   setTimeout(function() {
     location.href='game.html';
     window.location = 'https://lillielise.github.io/space-escape/scoreboard.html';
@@ -310,7 +310,7 @@ function gameOverDisplay(){
   // code block - display 'Game Over' msg
   gamePage.innerHTML = '';
   gameOver.style.display = 'block';
-  
+
   setTimeout(function() {
     window.location = 'https://lillielise.github.io/space-escape/scoreboard.html';
   }, 3000);
@@ -333,7 +333,7 @@ function gameOverDisplay(){
 // 'Start Game' button event listener
 
 
-// Shape events listeners: //
+// Alien events listeners: //
 
 
 shapeClick.addEventListener('click',clickHandler);
