@@ -10,15 +10,19 @@ var points = 0;
 var userGuesses = 0;
 var randomNumArray = [];
 
+
 retrieveLocalStorage();
 
 // DOM
+
+
 
 
 // DOM - Aliens
 
 var shapeClick = document.getElementById('shape-click');
 var gamePage = document.getElementById('game-page');
+var header = document.getElementById('header');
 
 var alien1 = document.getElementById('alien1');
 var alien2 = document.getElementById('alien2');
@@ -39,6 +43,7 @@ var spaceship = document.getElementById('spaceship');
 
 // DOM Riddles
 
+
 var riddle1 = document.getElementById('riddle1');
 var riddleOneAnswer = document.getElementById('riddleOneQuestion');
 
@@ -48,9 +53,10 @@ var riddleTwoAnswer = document.getElementById('riddleTwoQuestion');
 var riddle3 = document.getElementById('riddle3');
 var riddleThreeAnswer = document.getElementById('riddleThreeQuestion');
 
-var randomNum1 = document.getElementById('random-num1');
-var randomNum2 = document.getElementById('random-num2');
-var randomNum3 = document.getElementById('random-num3');
+var randomNum = document.getElementById('random-num');
+
+var fadeTarget = document.getElementById('target');
+
 
 var riddle4 = document.getElementById('riddle4');
 var riddleFourAnswer = document.getElementById('riddleFourQuestion');
@@ -86,6 +92,23 @@ randomNumArray.push(getRandomIntInclusive(min,max));
 randomNumArray.push(getRandomIntInclusive(min,max));
 
 console.log(randomNumArray);
+
+
+// credit: Naama Bar Ilan https://stackoverflow.com/questions/29017379/how-to-make-fadeout-effect-with-pure-javascript
+function fadeOutEffect() {
+  var fadeEffect = setInterval(function () {
+    if (!fadeTarget.style.opacity) {
+      fadeTarget.style.opacity = 1;
+    }
+    if (fadeTarget.style.opacity > 0) {
+      fadeTarget.style.opacity -= 0.1;
+    } else {
+      clearInterval(fadeEffect);
+    }
+  }, 50);
+}
+
+
 
 // Event Handlers //
 
@@ -144,7 +167,10 @@ function submitRiddleOneHandler(event){
 
     // Random Number 1:
 
-    randomNum1.textContent = randomNumArray[0];
+    
+    fadeOutEffect();
+    randomNum.textContent = randomNumArray[0];
+
 
   } else if(userGuesses < 5){
     userGuesses++;
@@ -177,8 +203,11 @@ function submitRiddleTwoHandler(event){
     console.log(points);
 
     // Random Number 2:
-
-    randomNum2.textContent = randomNumArray[1];
+    fadeTarget.style.opacity = 1;
+    fadeOutEffect();
+    randomNum.textContent = randomNumArray[1];
+  
+   
 
   } else if(userGuesses < 5){
     userGuesses++;
@@ -221,7 +250,9 @@ function submitRiddleThreeHandler(event){
 
     // Random Number 3:
 
-    randomNum3.textContent = randomNumArray[2];
+    fadeTarget.style.opacity = 1;
+    fadeOutEffect();
+    randomNum.textContent = randomNumArray[2];
 
     // Unhide riddle four:
 
@@ -246,10 +277,14 @@ function submitRiddleFourHandler(event){
   var riddleFourAnswerCheck = event.target.riddleFourAnswer.value;
   if (riddleFourAnswerCheck === `${randomNumArray[0]}${randomNumArray[1]}${randomNumArray[2]}`){
     points += 1000;
-    
-    avatar.style.transform = 'translate(-700px, -50px)';
+
+    riddle4.style.display = 'none';
+    header.innerHTML = '';
+    avatar.style.transform = 'translate(-800px, -50px)';
     avatar.style.transition = '2s';
+
     
+
     // YOU WIN Function call
 
     // function that moves space ship with delay and screen with delay
@@ -259,7 +294,7 @@ function submitRiddleFourHandler(event){
   } else{
     // remove event handler
     riddleOneAnswer.removeEventListener('submit', submitRiddleOneHandler);
-  
+
     // game over msg
     gameOverDisplay();
     // save to LS
@@ -310,6 +345,7 @@ function youWinDisplay(){
   // Assign score to scoreboard
 
   gamePage.innerHTML = '';
+  
   youWin.style.display = 'block';
 
 
@@ -325,6 +361,7 @@ function gameOverDisplay(){
   getUserScore();
   // code block - display 'Game Over' msg
   gamePage.innerHTML = '';
+ 
   gameOver.style.display = 'block';
 
   setTimeout(function() {
