@@ -1,238 +1,196 @@
-
-/* THIS IS THE BACKGROUND FOR HOMEPAGE */
-#index{
-  background-image: url('https://www.goodfreephotos.com/albums/astrophotography/great-stars-from-hubble.jpg');
-  height: 100%;
-}
-
-
-
-/* THIS IS THE BACKGROUND FOR SCOREBOARD */
-#scoreboardbody {
-  background-image: url('https://www.goodfreephotos.com/albums/astrophotography/great-stars-from-hubble.jpg');
-}
-
-
-
-/* THIS IS THE BACKGROUND FOR ABOUT US  */
-#aboutteam {
-  background-image: url('https://www.goodfreephotos.com/albums/astrophotography/great-stars-from-hubble.jpg');
-}
-
-/* https://images.pexels.com/photos/414834/pexels-photo-414834.jpeg?cs=srgb&dl=colorful-cosmos-crab-nebula-414834.jpg&fm=jpg */
-
+/* ====================================================================== */
+/* ENTIRE PAGE - ALL */
 
 body {
   font-family: 'Bungee Shade';
   color: white;
 }
 
-/* THIS IS THE HEADER PER THE ORIGINAL WIREFRAMES */
-header{
+/* Background image */
+.background-img {
+  background-image: url('https://www.goodfreephotos.com/albums/astrophotography/great-stars-from-hubble.jpg');
+  height: 100%;
+}
+
+/* ====================================================================== */
+/* HEADERS */
+
+header {
   height: 120px;
-  /* background-color: grey; */
 }
 
-
-
-/* THIS IS THE POSITIONING OF THE LOGO IMAGE (CURRENTLY NOT IN USE) */
-nav img {
-  float: left; 
-  margin-top: 10px;
-  margin-right: 30px;
-  padding-bottom: 15px;
+/* Nav titles in li */
+li {
+  display: inline-block;
+  margin-left: 130px;
+  margin-top: 50px;
+  font-size: 1.9em;
 }
 
+li:last-child {
+  margin-left: 50px;
+}
 
-/* THESE A LINKS STYLE THE LINKS AT THE TOP OF THE PAGE */
+/* Nav links */
 a:link{
-  color:purple;
+  color: white;
 }
-
-
 
 a:hover{
   color: greenyellow;
 }
 
-
-
-a:active{
-  color: yellow;
-}
-
-
-
-a:visited{
+a {
   color: white;
 }
 
-a {
-  font-size: 1.9em;
-}
+/* ====================================================================== */
+/* MAIN */
 
 
+/* All H1 headers */
 
-
-
-/* I HONESTLY DON'T REMEMBER OFF THE TOP OF MY HEAD, BUT ITS GLOBAL SO THERES THAT */
-li {
-  display: inline-block;
-  margin-left: 150px;
-  margin-top: 50px;
-  font-size: 1em;
-}
-
-
-
-/* STYLES ALL H1 HEADERS */
-h1{
-    /* text-align: center; */
+h1 {
+  text-align: center;
   font-size: 5em;
-  padding:  0px 280px 0px 350px; 
+  padding: 40px;
+  margin-bottom: 50px;
 }
 
+/* Home page header */
 
-
-
-/* STYLES THE HOME PAGE HEADER */
-
-
-  #title{
+#title{
   text-align: center;
   font-size: 9em;
   width: 100%;
- 
-  padding:  40px;
-  margin-bottom: 30px;
- 
+  padding: 40px; 
 } 
 
+/* ====================================================================== */
+/* HOME PAGE */
 
-
-
-/* STYLES THE SCOREBOARD HEADER */
-#scoreboard{
-  text-align: center;
-  font-size: 4em;
-  padding:  250px 280px 25px 350px;
-}
-
-
-
-/* STYLES THE SCOREBOARD TABLE (DOES THIS EXIST PRIOR TO POPULATING THROUGH GAME) */
-#topscores{
-  text-align: center;
-  font-size: 2em;
-  padding:  10px 280px 25px 350px
-}
-
-
-
-/* THE MAIN PARAGRAPH ON THE HOME PAGE   */
-
-
-main p{
-  text-align: center;
-  margin: 30px;
-  margin-left: 200px;
-  width: 70%;
-  font-size: 2em;
-  color: black;
-  font-family: 'sans serif';
-  border: 10px black solid;
-  box-shadow: 10px 5px 5px black;
-  padding: 30px;
-  line-height: 1.5em;
+/* Main paragraph  */
+#game-p {
   background-color: rgba(255, 255, 255, 0.9);
+  border: 10px black solid;
   border-radius: 10px;
+  box-shadow: 5px 5px 5px black;
+  color: black;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 1.5em;
+  text-align: justify;
+  line-height: 1.5em;
+  margin: 20px;
+  margin-left: 200px;
+  padding: 20px;
+  width: 70%;
 }
 
 
-
-/* STYLES THE NAME INPUT FIELD ON HOME PAGE */
+/* Name input field */
 input[type=text]{
-  text-align: center;
-  font-family: 'Prosto One';
-  padding: 1em;
-  font-size: 1em;
   background-color: black;
   color: white;
+  font-size: 1em;
+  font-family: 'Exo 2', sans-serif;
   outline: 3px solid black;
+  padding: 1em;
+  text-align: center;
 }
 
-
-
-
-
-/* STYLES THE START GAME BUTTON ON HOMEPAGE */
-button{
-  background-color: black;
-  font-family: 'Prosto One';
-  padding: .5em;
-  font-size: 1em;
+::placeholder {
   color: white;
-  margin-top: 10px;
 }
 
 
-
-/* HERO IMAGE ON ABOUT US */
-#hero{
-  padding: 100px 75px 30px 170px;
+/* Start game button */
+button {
+  background-color: black;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 2em;
+  padding: 0.7em 3em 0.7em 3em;
+  color: white;
+  margin-top: 20px;
+  border: none;
 }
 
-
-
-/* #headshots li{
-
-} */
-
-
-/* STYLES THE BIO PHOTOS ON ABOUT US */
-.biopic{
-  display: inline-block;
-  float: left;
+button:hover {
+  background-color: greenyellow;
+  color: black;
 }
 
-
-
-/* I USED A FOOTER TO CORRECT SPACING ISSUES ACROSS PAGE. MAY WANT TO ADD A BORDER TO SEE WHAT IT DOES. */
-footer{
-  /* margin: 0px 75px 0px 75px; */
-  /* position: fixed;
-  bottom: 0 !important; */
-  margin-top: 11em;
+footer {
+  margin-top: 2em;
   text-align: center;
   padding: 10px 75px 10px 75px;
 }
 
+/* ====================================================================== */
+/* SCOREBOARD PAGE*/
 
+/* Table */
 
-
-/* MAY CONTROL TABLE MARGINS FOR SCOREBOARD */
 table {
   margin-left:auto; 
   margin-right:auto;
   letter-spacing: 1px;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.85);
+  border: 2px solid black;
+  font-family: 'Exo 2', sans-serif;
 }
 
 
-
-/* PRESUMABLY STYLES TABLE HEADER */
 th {
-  background-color: rgba(155, 155, 155, 0.55);
-  padding: 20px;
-  font-size: 20px;
+  padding: 40px 80px 40px 80px;
+  font-size: 25px;
   font-weight: bold;
-  border: 1px solid black;
+  border: 2px solid black;
 }
 
 td {
-  background-color: rgba(155, 155, 155, 0.55);
   font-size: 20px;
   padding: 20px;
-  border: 1px solid black;
-
+  border: 2px solid black;
+  font-weight: bold;
+  text-align: center;
 }
 
+
+/* ====================================================================== */
+/* ABOUT US PAGE*/
+
+#bio {
+  width: 960px;
+  margin: 0px auto;
+}
+
+.biopic {
+  width: 250px;
+  float: left;
+  margin: 0px 30px 0px 30px;
+}   
+
+div img {
+  margin-left: 20px;
+}
+
+div h2 {
+  margin-top: 12px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 20px;
+}
+
+div p {
+  font-family: 'Exo 2', sans-serif;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 5px black solid;
+  border-radius: 10px;
+  color: black;
+  padding: 10px;
+  overflow: hidden;
+  height: 250px;
+  text-align: justify;
+  margin-bottom: 75px;
+}
