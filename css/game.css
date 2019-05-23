@@ -10,12 +10,23 @@ body {
 
 /* Header */
 
-#header {
+header {
   background-color: black;
-  width: 100%; 
-  max-height: 40px;
- 
-  padding: 50px;
+  width: 1444px;
+  /* max-height: 40px; */
+  height: 120px;
+  /* padding: 50px; */
+  z-index: 1;
+  position: absolute;
+}
+
+li {
+  display: inline-block;
+  margin-left: 130px;
+  margin-top: 50px;
+  font-size: 1.9em;
+  z-index: 2;
+  position: absolute;
 }
 
 a {
@@ -23,11 +34,16 @@ a {
   text-align: left;
   font-family: 'Bungee Shade', cursive;
   color: white;
+  margin: 20px;
 } 
 
 .star {
   display: none;
-  margin-left: 60px;
+  z-index: 2;
+  position: absolute;
+  margin: none;
+  /* z-index: 2;
+  position: absolute; */
  } 
 
 
