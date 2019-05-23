@@ -5,23 +5,20 @@ body {
   height: 100%;
   max-width: 1350px;
   color: white;
+  font-family: 'Exo 2', sans-serif;
   
 }
 
 /* Header */
 
-header {
-  background-color: black;
-  width: 1444px;
-  /* max-height: 40px; */
-  height: 120px;
-  /* padding: 50px; */
-  z-index: 1;
-  position: absolute;
+header {  
+  height: 50px;
 }
 
+
+
 li {
-  display: inline-block;
+  display: inline;
   margin-left: 130px;
   margin-top: 50px;
   font-size: 1.9em;
@@ -41,10 +38,19 @@ a {
   display: none;
   z-index: 2;
   position: absolute;
-  margin: none;
-  /* z-index: 2;
-  position: absolute; */
+  margin-left: 200px;
+  z-index: 2;
+  position: absolute;
  } 
+
+ 
+ #star2 {
+   margin-left: 300px;
+ }
+
+ #star3 {
+  margin-left: 400px;
+}
 
 
 /* Game Avatar and Spaceship */
@@ -92,7 +98,7 @@ a {
 #alien3 {
   height: 100px;
   margin-top: 350px;
-  margin-left: 1300px;
+  margin-left: 1200px;
 }
 
 
@@ -127,7 +133,7 @@ margin-left: 570px;
 
 #glow3 {
   margin-top: 390px;
-  margin-left: 1360px;
+  margin-left: 1260px;
   display: none;
   }
 
@@ -167,6 +173,14 @@ margin-left: 570px;
   margin-left: 700px;
 }
 
+#riddle4 {
+    height: 50px;
+    width: 400px;
+    padding:20px;
+    margin-top: 300px;
+    margin-left: 380px;
+}
+
 
 
 /* Win and Lose Message */
@@ -190,23 +204,22 @@ margin-left: 570px;
 
  /* Random Riddle */
 
- #random-num1 {
-   color:red;
-   font-size: 100px;
-   margin: 400px;
- }
+ 
 
- #random-num2 {
-  color:green;
+/* .random-numbers {
+  z-index: 1;
+  position: absolute;
   font-size: 100px;
-  margin: 400px;
-}
+  color:greenyellow;
 
-#random-num3 {
-  color:blueviolet;
-  font-size: 100px;
-  margin: 400px;
-}
-
-
-
+} */
+ 
+#random-num {
+  margin-top: 450px;
+  margin-left: 900px;
+  z-index: 1;
+  position: absolute;
+  font-size: 150px;
+  color:greenyellow;
+  font-family: 'Bungee Shade', cursive;
+} 
