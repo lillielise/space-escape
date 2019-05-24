@@ -24,12 +24,14 @@ li {
   font-size: 1.9em;
   z-index: 2;
   position: absolute;
+  font-family: 'Bungee Shade', cursive;
+  color: white;
 }
 
+
 a {
-  font-size: 35px;
+  
   text-align: left;
-  font-family: 'Bungee Shade', cursive;
   color: white;
   margin: 20px;
 } 
@@ -52,6 +54,9 @@ a {
   margin-left: 400px;
 }
 
+#guesses {
+  margin-left: 950px;
+}
 
 /* Game Avatar and Spaceship */
 
