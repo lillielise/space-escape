@@ -73,9 +73,6 @@ var riddleFourAnswer = document.getElementById('riddleFourQuestion');
 var youWin = document.getElementById('you-win');
 var gameOver = document.getElementById('game-over');
 
-// Constructors //
-
-// Instances //
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //// FUNCTION DECLARATIONS ////
@@ -118,7 +115,6 @@ function fadeOutEffect() {
 
 // Event Handlers //
 
-// Handle 'Start Game' button click
 
 // Shape events handlers //
 
@@ -179,7 +175,7 @@ function submitRiddleOneHandler(event){
   } else if(userGuesses > 0){
     userGuesses--;
     guessesLeft.textContent = userGuesses + 1;
-  
+
     console.log(`number of userGuesses is ${userGuesses}`);
 
   } else if(userGuesses === 0){
@@ -212,8 +208,8 @@ function submitRiddleTwoHandler(event){
     fadeTarget.style.opacity = 1;
     fadeOutEffect();
     randomNum.textContent = randomNumArray[1];
-  
-   
+
+
 
   } else if(userGuesses > 0){
     userGuesses--;
@@ -265,7 +261,7 @@ function submitRiddleThreeHandler(event){
 
     riddle4.style.display = 'block';
     guesses.style.display = 'none';
-    
+
 
   } else if(userGuesses > 0){
     userGuesses--;
@@ -293,7 +289,7 @@ function submitRiddleFourHandler(event){
     avatar.style.transform = 'translate(-800px, -50px)';
     avatar.style.transition = '2s';
 
-    
+
 
     // YOU WIN Function call
 
@@ -310,11 +306,10 @@ function submitRiddleFourHandler(event){
     // save to LS
   }
 
-//   console.log(`The randomNumArray is ${riddleFourAnswerCheck}`);
-//   console.log(`The answer randomNumArray is ${randomNumArray[0]}${randomNumArray[1]}${randomNumArray[2]}`);
+
 }
 
-// Handle spaceship click
+
 
 // LS Functions
 
@@ -355,7 +350,7 @@ function youWinDisplay(){
   // Assign score to scoreboard
 
   gamePage.innerHTML = '';
-  
+
   youWin.style.display = 'block';
 
 
@@ -371,7 +366,7 @@ function gameOverDisplay(){
   getUserScore();
   // code block - display 'Game Over' msg
   gamePage.innerHTML = '';
- 
+
   gameOver.style.display = 'block';
 
   setTimeout(function() {
@@ -383,12 +378,11 @@ function gameOverDisplay(){
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //// EXECUTABLE CODE ////
 
-// Function Calls //
 
 
 // Event listeners //
 
-// Alien events listeners: //
+
 
 
 shapeClick.addEventListener('click',clickHandler);

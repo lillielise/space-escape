@@ -24,20 +24,7 @@ function retrieveLocalStorage(){
   }
 }
 
-// function getNamesFromLS (){
-//   var retrievedPlayers = localStorage.getItem('players');
-//   var parsedPlayers = JSON.parse(retrievedPlayers);
 
-//   console.log(parsedPlayers);
-
-// }
-
-
-// function getScoresFromLS (){
-//   var retrievedScores = localStorage.getItem('scores');
-//   var parsedScores = JSON.parse(retrievedScores);
-//   scores = parsedScores;
-// }
 
 // TABLE HEADER FUNCTION
 
