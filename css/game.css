@@ -24,12 +24,14 @@ li {
   font-size: 1.9em;
   z-index: 2;
   position: absolute;
+  font-family: 'Bungee Shade', cursive;
+  color: white;
 }
 
+
 a {
-  font-size: 35px;
+  
   text-align: left;
-  font-family: 'Bungee Shade', cursive;
   color: white;
   margin: 20px;
 } 
@@ -52,6 +54,9 @@ a {
   margin-left: 400px;
 }
 
+#guesses {
+  margin-left: 950px;
+}
 
 /* Game Avatar and Spaceship */
 
@@ -223,3 +228,30 @@ margin-left: 570px;
   color:greenyellow;
   font-family: 'Bungee Shade', cursive;
 } 
+
+/* Submit Button */
+
+button {
+  background-color: black;
+  border: none;
+  color: white;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 20px;
+  padding: 10px 25px 10px 25px;
+}
+
+button:hover {
+  background-color: greenyellow;
+  color: black;
+}
+
+/* Text Input Field */
+input[type=text]{
+  font-size: 20px;
+  font-family: 'Exo 2', sans-serif;
+  font-weight: bold;
+  padding: 7px;
+  text-align: center;
+}
+
+
