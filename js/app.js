@@ -131,7 +131,7 @@ function clickHandler(event){
 
 
     //  move avatar to alien
-    avatar.style.transform = 'translate(-400px, -240px)';
+    avatar.style.transform = 'translate(-490px, -240px)';
     avatar.style.transition = '1s';
 
   } if(event.target.id === 'alien2' && glow2.style.display === 'block'){
