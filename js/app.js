@@ -7,7 +7,7 @@
 
 var playersArray = [];
 var points = 0;
-var userGuesses = 0;
+var userGuesses = 4;
 var randomNumArray = [];
 
 
@@ -22,7 +22,13 @@ retrieveLocalStorage();
 
 var shapeClick = document.getElementById('shape-click');
 var gamePage = document.getElementById('game-page');
+
 var header = document.getElementById('header');
+var guessesLeft = document.getElementById('guesses-left');
+var guesses = document.getElementById('guesses');
+
+// Populate user guesses at beginning of game
+guessesLeft.textContent = userGuesses + 1;
 
 var alien1 = document.getElementById('alien1');
 var alien2 = document.getElementById('alien2');
@@ -166,17 +172,17 @@ function submitRiddleOneHandler(event){
     console.log(points);
 
     // Random Number 1:
-
-    
     fadeOutEffect();
     randomNum.textContent = randomNumArray[0];
 
 
-  } else if(userGuesses < 5){
-    userGuesses++;
+  } else if(userGuesses > 0){
+    userGuesses--;
+    guessesLeft.textContent = userGuesses + 1;
+  
     console.log(`number of userGuesses is ${userGuesses}`);
 
-  } else if(userGuesses === 5){
+  } else if(userGuesses === 0){
     // remove event handler
     riddleOneAnswer.removeEventListener('submit', submitRiddleOneHandler);
     // game over msg
@@ -209,11 +215,12 @@ function submitRiddleTwoHandler(event){
   
    
 
-  } else if(userGuesses < 5){
-    userGuesses++;
+  } else if(userGuesses > 0){
+    userGuesses--;
+    guessesLeft.textContent = userGuesses + 1;
     console.log(`number of userGuesses is ${userGuesses}`);
 
-  } else if(userGuesses === 5){
+  } else if(userGuesses === 0){
     // remove event handler
     riddleOneAnswer.removeEventListener('submit', submitRiddleOneHandler);
     // game over msg
@@ -257,12 +264,15 @@ function submitRiddleThreeHandler(event){
     // Unhide riddle four:
 
     riddle4.style.display = 'block';
+    guesses.style.display = 'none';
+    
 
-  } if(userGuesses < 5){
-    userGuesses++;
+  } else if(userGuesses > 0){
+    userGuesses--;
+    guessesLeft.textContent = userGuesses + 1;
     console.log(`number of userGuesses is ${userGuesses}`);
 
-  } if(userGuesses === 5){
+  } else if(userGuesses === 0){
     // remove event handler
     riddleOneAnswer.removeEventListener('submit', submitRiddleOneHandler);
 
