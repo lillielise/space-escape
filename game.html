@@ -6,33 +6,44 @@
     <link rel = "stylesheet" href = "css/reset.css">
     <link rel = "stylesheet" href = "css/game.css">
     <link href="https://fonts.googleapis.com/css?family=Bungee+Shade&display=swap" rel="stylesheet">
+
+    <title>Space Escape</title>
   </head>
 
-  <!-- Header -->
-  <header>
-    <title>Space Escape</title>
-  </header>
 
   <body>
   
   <section id = "game-page">
 
+    <!-- Header -->
+    <header id="header">
+      <!-- <div id = "header"> -->
+      <ul>
+        <li>
+          <a href="https://lillielise.github.io/space-escape/index.html">exit</a>
+        </li>
+         <li>
+          <img class = "star" id = "star" src = "https://img.icons8.com/ultraviolet/40/000000/crystal.png">
+         </li>
+         <li>
+          <img class = "star" id = "star2" src = "https://img.icons8.com/ultraviolet/40/000000/crystal.png">
+          </li>
+        <li>
+        <img class = "star" id = "star3" src = "https://img.icons8.com/ultraviolet/40/000000/crystal.png">
+      </li>
+        <li id = "guesses">Guesses Left: <span id = "guesses-left"></span></li>
 
+      </ul>
+      <!-- </div> -->
+    </header>
 
-        <div id = "header">
-            <a href="https://lillielise.github.io/space-escape/">home</a>
-            <img class = "star" id = "star" src = "https://img.icons8.com/ultraviolet/40/000000/crystal.png">
-            <img class = "star" id = "star2" src = "https://img.icons8.com/ultraviolet/40/000000/crystal.png">
-            <img class = "star" id = "star3" src = "https://img.icons8.com/ultraviolet/40/000000/crystal.png">
-          </div>
-        
     
     <!-- Avatar -->
     <img id = "avatar" src= "img/kisspng-astronaut-outer-space-euclidean-vector-astronaut-vector-material-5a79a47ee78d85.4084692815179214069485.png">
 
     <!-- Rocketship -->
     <img id = "spaceship" src= "img/Spaceship-PNG-Image.png">
-    </section>
+  
 
     <!-- Create Aliens  -->
     <section id ="shape-click">
@@ -80,9 +91,21 @@
           <button type = "submit">Submit!</button>  
         </form>
       </div>
+
+      <div id ="target">
+        <p id = "random-num"></p>
+      </div>
+
+      <div class = "riddle" id='riddle4'>
+          <label for = "riddleFourAnswer">What's the code to get into the spaceship?</label>
+          <form id = "riddleFourQuestion" autocomplete="off">
+            <input type = "text" name = "riddleFourAnswer" required/>
+            <button type = "submit">Submit!</button>  
+          </form>
+      </div>
     
     </section>
-    
+  </section>
 
 
   <!-- Win/Lose  -->

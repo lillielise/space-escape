@@ -2,13 +2,6 @@
 
 Code Fellows 201 Final Project
 
-## Getting Started
-
-TBA
-
-### Prerequisites
-
-TBA
 
 ## Built With
 
@@ -21,10 +14,18 @@ TBA
 * **Matthew Heyert** - [GitHub Profile](https://github.com/heyerthb)
 * **Na'ama Bar-Ilan** - [GitHub Profile](https://github.com/NaamaBarIlan)
 
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Credit
+
+* https://www.goodfreephotos.com
+* https://pngtree.com
+* https://icons8.com
+* https://www.pexels.com/
+* https://pixabay.com/
+* https://unsplash.com/
 
 ## Acknowledgments
 

@@ -5,31 +5,58 @@ body {
   height: 100%;
   max-width: 1350px;
   color: white;
+  font-family: 'Exo 2', sans-serif;
   
 }
 
 /* Header */
 
-#header {
-  background-color: black;
-  width: 100%; 
-  max-height: 40px;
- 
-  padding: 50px;
+header {  
+  height: 50px;
 }
 
-a {
-  font-size: 35px;
-  text-align: left;
+
+
+li {
+  display: inline;
+  margin-left: 130px;
+  margin-top: 50px;
+  font-size: 1.9em;
+  z-index: 2;
+  position: absolute;
   font-family: 'Bungee Shade', cursive;
   color: white;
+}
+
+
+a {
+  
+  text-align: left;
+  color: white;
+  margin: 20px;
 } 
 
 .star {
   display: none;
-  margin-left: 60px;
+  z-index: 2;
+  position: absolute;
+  margin-left: 200px;
+  z-index: 2;
+  position: absolute;
  } 
 
+ 
+ #star2 {
+   margin-left: 300px;
+ }
+
+ #star3 {
+  margin-left: 400px;
+}
+
+#guesses {
+  margin-left: 950px;
+}
 
 /* Game Avatar and Spaceship */
 
@@ -76,7 +103,7 @@ a {
 #alien3 {
   height: 100px;
   margin-top: 350px;
-  margin-left: 1300px;
+  margin-left: 1200px;
 }
 
 
@@ -111,7 +138,7 @@ margin-left: 570px;
 
 #glow3 {
   margin-top: 390px;
-  margin-left: 1360px;
+  margin-left: 1260px;
   display: none;
   }
 
@@ -151,6 +178,14 @@ margin-left: 570px;
   margin-left: 700px;
 }
 
+#riddle4 {
+    height: 50px;
+    width: 400px;
+    padding:20px;
+    margin-top: 300px;
+    margin-left: 380px;
+}
+
 
 
 /* Win and Lose Message */
@@ -172,5 +207,51 @@ margin-left: 570px;
  }
 
 
+ /* Random Riddle */
+
+ 
+
+/* .random-numbers {
+  z-index: 1;
+  position: absolute;
+  font-size: 100px;
+  color:greenyellow;
+
+} */
+ 
+#random-num {
+  margin-top: 450px;
+  margin-left: 900px;
+  z-index: 1;
+  position: absolute;
+  font-size: 150px;
+  color:greenyellow;
+  font-family: 'Bungee Shade', cursive;
+} 
+
+/* Submit Button */
+
+button {
+  background-color: black;
+  border: none;
+  color: white;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 20px;
+  padding: 10px 25px 10px 25px;
+}
+
+button:hover {
+  background-color: greenyellow;
+  color: black;
+}
+
+/* Text Input Field */
+input[type=text]{
+  font-size: 20px;
+  font-family: 'Exo 2', sans-serif;
+  font-weight: bold;
+  padding: 7px;
+  text-align: center;
+}
 
 
