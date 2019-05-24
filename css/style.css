@@ -194,9 +194,10 @@ div p {
   border: 5px black solid;
   border-radius: 10px;
   color: black;
+  line-height: 20px;
   padding: 10px;
   overflow: hidden;
-  height: 250px;
+  height: 290px;
   text-align: justify;
   margin-bottom: 75px;
 }
